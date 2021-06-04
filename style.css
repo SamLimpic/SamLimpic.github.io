@@ -1,0 +1,139 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Amatic SC", cursive;
+  background-color: #b3d1cd;
+}
+
+.retro {
+  font-family: "Press Start 2P", cursive;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.disable {
+  opacity: 50%;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.skip {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+@media (min-width: 0) {
+  .font-xs {
+    font-size: 0.5rem;
+  }
+  .font-sm {
+    font-size: 0.75rem;
+  }
+  .font-md {
+    font-size: 1rem;
+  }
+  .font-lg {
+    font-size: 1.25rem;
+  }
+  .font-xl {
+    font-size: 1.5em;
+  }
+  .font-xxl {
+    font-size: 2.5em;
+  }
+}
+
+@media (min-width: 576px) {
+  .font-xs {
+    font-size: 0.75rem;
+  }
+  .font-sm {
+    font-size: 1rem;
+  }
+  .font-md {
+    font-size: 1.25rem;
+  }
+  .font-lg {
+    font-size: 1.5rem;
+  }
+  .font-xl {
+    font-size: 1.75em;
+  }
+  .font-xxl {
+    font-size: 2.75em;
+  }
+}
+
+@media (min-width: 768px) {
+  .font-xs {
+    font-size: 1rem;
+  }
+  .font-sm {
+    font-size: 1.25rem;
+  }
+  .font-md {
+    font-size: 1.5rem;
+  }
+  .font-lg {
+    font-size: 1.75rem;
+  }
+  .font-xl {
+    font-size: 2em;
+  }
+  .font-xxl {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 992px) {
+  .font-xs {
+    font-size: 1.25rem;
+  }
+  .font-sm {
+    font-size: 1.5rem;
+  }
+  .font-md {
+    font-size: 1.75rem;
+  }
+  .font-lg {
+    font-size: 2rem;
+  }
+  .font-xl {
+    font-size: 2.25em;
+  }
+  .font-xxl {
+    font-size: 3.25em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .font-xs {
+    font-size: 1.5rem;
+  }
+  .font-sm {
+    font-size: 1.75rem;
+  }
+  .font-md {
+    font-size: 2rem;
+  }
+  .font-lg {
+    font-size: 2.25rem;
+  }
+  .font-xl {
+    font-size: 2.5em;
+  }
+  .font-xxl {
+    font-size: 3.5em;
+  }
+}
