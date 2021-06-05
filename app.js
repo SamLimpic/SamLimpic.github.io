@@ -43,12 +43,12 @@ function helloWorld(str, num) {
     }, num);
     setTimeout(() => {
         let flashInt = setInterval(() => {
-            flash('hello', num)
-        }, num * 4);
+            flash('hello', num/2)
+        }, num * 3);
         setTimeout(() => {
             clearInterval(flashInt)
             load()
-        }, num*16);
+        }, num*12);
     }, (num*str.length)-num);
 }
 
@@ -58,6 +58,41 @@ function load() {
     document.getElementById('showtime').classList.remove('hidden')
     document.getElementById('header').classList.remove('hidden')
     document.getElementById('footer').classList.remove('hidden')
+}
+
+function expand(str) {
+    switch(str) {
+        case str === 'keepr':
+            window.open()
+        break;
+        case str == 'tavern':
+            window.open()
+            break;
+        case str == 'bug':
+            window.open('https://bug-catcher-vue.herokuapp.com/#/')
+            break;
+        case str == 'bill':
+            window.open('https://bill-boards.herokuapp.com/#/')
+            break;
+        case str == 'smith':
+            window.open('https://samlimpic.github.io/master-smith/')
+            break;
+        case str == 'miner':
+            window.open('https://samlimpic.github.io/dungeon-miner/')
+            break;
+        default:
+}
+    
+}
+
+function skip() {
+    document.getElementById('intro').classList.add('hidden')
+    document.body.classList.remove('bg-white')
+    document.getElementById('showtime').classList.remove('hidden')
+    document.getElementById('header').classList.remove('hidden')
+    document.getElementById('footer').classList.remove('hidden')
+    document.getElementById('skip').classList.add('hidden')
+
 }
 
 flash('hello', 300)

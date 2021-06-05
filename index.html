@@ -22,51 +22,130 @@
 <body class="bg-white">
 
   <header class="container-fluid position-relative">
-    <button type="button" class="skip btn btn-lg btn-outline-dark border-0 font-lg px-3 py-md-0 py-1"
-      title="Ain't nobody got time for this..." onclick="load()">
+    <button id="skip" type="button" class="skip btn btn-lg btn-outline-dark border-0 font-lg px-3 py-md-0 py-1"
+      title="Ain't nobody got time for this..." onclick="skip()">
       <i class="fas fa-angle-double-right"></i>
     </button>
-    <div id="header" class="hidden row justify-content-start bg-secondary align-items-center pt-3 pb-2">
-      <div class="col">
-        <h1 class="font-xl text-light">
+    <div id="header" class="hidden row justify-content-between bg-secondary align-items-center">
+      <div class="col-9 pt-3 pb-2">
+        <h1 id="name" class="font-xxl text-light text-shadow">
           <span>
-            <i class="fas fa-compass fa-spin mr-2"></i>
+            <i class="fas fa-compass fa-spin text-primary mr-2"></i>
           </span>
           Samuel Limpic
         </h1>
       </div>
+      <div class="col-3 text-right">
+        <button id="contact" type="button" class="btn btn-outline-primary bg-transparent border-0 font-xxl p-0 mr-md-1" onclick="contacts()">
+          <i class="fas fa-address-card text-shadow"></i>
+        </button>
+      </div>
     </div>
   </header>
 
-
-  <main class="container-fluid mt-md-5 mt-2 pl-md-5">
-    <section id="intro" class="retro">
+  <main class="container-fluid ">
+    <section id="intro" class="retro mt-md-5 mt-2 px-md-5">
       <div class="row justify-content-start align-items-center">
-        <div class="col">
-          <div class="row justify-content-start text-center align-items-center">
-            <h1 class="font-xxl">[</h1>
-            <h1 id="hello" class="font-xl">_</h1>
-            <h1 class="font-xxl">]</h1>
-          </div>
-          <h2 class="font-lg"><u>Samuel Limpic</u></h2>
-          <h3 class="font-md">Full Stack Developer</h3>
-            <div class="ml-md-5 ml-3 mt-md-3 mt-2">
-              <h4 class="font-sm">Creative Development <br>
-                & Intuitive Design</h4>
-              <button id="start" type="button" class="btn-outline-dark ml-md-5 ml-3 mt-md-3 mt-2 pl-2 font-lg" onclick=" helloWorld('Hello_World', 300)">START</button>
+          <div class="col">
+            <div class="row justify-content-start text-center align-items-center">
+              <h1 class="font-xxl">[</h1>
+              <h1 id="hello" class="font-xl">_</h1>
+              <h1 class="font-xxl">]</h1>
             </div>
+            <h2 class="font-lg"><u>Samuel Limpic</u></h2>
+            <h3 class="font-md">Full Stack Developer</h3>
+            <h4 class="font-sm">Creative Development <br>
+              & Intuitive Design</h4>
+            <button id="start" type="button" class="btn-outline-dark ml-md-5 ml-3 mt-md-3 mt-2 pl-2 font-lg" onclick=" helloWorld('Hello_World', 300) ">START</button>
+          </div>
         </div>
       </div>
     </section>
-    <section id="showtime" class="hidden">
-      <h1>LETS GO</h1>
+    <section id="showtime" class="hidden m-md-4 m-3">
+      <div class="row justify-content-around">
+
+        <div id="keepr" class="col-md-4 col-12 p-3">
+          <div id="keepr-card" class="card shadow bg-light" onclick="expand('keepr')">
+            <div id="keepr-body" class="card-body position-relative">
+              <i id="keepr-star" class="fas fa-star star font-xs"></i>
+              <i id="keepr-icon" class="fab fa-facebook-f icon font-xxl"></i>
+              <h2 id="keepr-title" class="card-title font-xxl"><u>Fellowship</u></h2>
+              <h3 id="keepr-subtitle" class="card-subtitle text-muted font-md"><i>Vue3 - SCSS - C# - SQL</i></h3>
+              <h4 id="keepr-text" class="card-text font-lg pl-4">A social media site populated with characters from The Lord of the Rings
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <div id="tavern" class="col-md-4 col-12 p-3">
+          <div id="tavern-card" class="card shadow bg-light" onclick="expand('tavern')">
+            <div id="tavern-body" class="card-body position-relative">
+              <i id="tavern-star" class="fas fa-star star font-xs"></i>
+              <i id="tavern-icon" class="fas fa-dice-d20 icon font-xxl"></i>
+              <h2 id="tavern-title" class="card-title font-xxl"><u>The Tavern</u></h2>
+              <h3 id="tavern-subtitle" class="card-subtitle text-muted font-md"><i>Vue3 - SCSS - Node.js - MongoDB</i></h3>
+              <h4 id="tavern-text" class="card-text font-lg pl-4">An interactive character-builder for Dungeons & Dragons 5th Edition</h4>
+            </div>
+          </div>
+        </div>
+
+        <div id="bug" class="col-md-4 col-12 p-3">
+          <div id="bug-card" class="card shadow bg-light" onclick="expand('bug')">
+            <div id="bug-body" class="card-body position-relative">
+              <i id="bug-star" class="fas fa-star star font-xs"></i>
+              <i id="bug-icon" class="fas fa-bug icon font-xxl"></i>
+              <h2 id="bug-title" class="card-title font-xxl"><u>Bug Catcher</u></h2>
+              <h3 id="bug-subtitle" class="card-subtitle text-muted font-md"><i>Vue3 - SCSS - Node.js - MongoDB</i></h3>
+              <h4 id="bug-text" class="card-text font-lg pl-4">A mock message board to post, comment on, and release bugs
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <div id="bill" class="col-md-4 col-12 p-3">
+          <div id="bill-card" class="card shadow bg-light" onclick="expand('bill')">
+            <div id="bill-body" class="card-body position-relative">
+              <i id="bill-icon" class="fas fa-sign icon font-xxl"></i>
+              <h2 id="bill-title" class="card-title font-xxl"><u>Bill Boards</u></h2>
+              <h3 id="bill-subtitle" class="card-subtitle text-muted font-md"><i>Vue3 - SCSS - Node.js - MongoDB</i></h3>
+              <h4 id="bill-text" class="card-text font-lg pl-4">A task manager inspired by Trello, utilizing FillMurray to its upmost
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <div id="smith" class="col-md-4 col-12 p-3">
+          <div id="smith-card" class="card shadow bg-light" onclick="expand('smith')">
+            <div id="smith-body" class="card-body position-relative">
+              <i id="smith-icon" class="fas fa-fire-alt icon font-xxl"></i>
+              <h2 id="smith-title" class="card-title font-xxl"><u>Master Smith</u></h2>
+              <h3 id="smith-subtitle" class="card-subtitle text-muted font-md"><i>Javascript - SCSS</i></h3>
+              <h4 id="smith-text" class="card-text font-lg pl-4">A task-list blacksmith simulation utilizing custom art assets
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <div id="miner" class="col-md-4 col-12 p-3">
+          <div id="miner-card" class="card shadow bg-light" onclick="expand('miner')">
+            <div id="miner-body" class="card-body position-relative">
+              <i id="miner-icon" class="fas fa-dungeon icon font-xxl"></i>
+              <h2 id="miner-title" class="card-title font-xxl"><u>Dungeoneer</u></h2>
+              <h3 id="miner-subtitle" class="card-subtitle text-muted font-md"><i>Javascript</i></h3>
+              <h4 id="miner-text" class="card-text font-lg pl-4">A multi-stage click-counting adventure utilizing custom art assets
+              </h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
   </main>
 
   <footer id="footer" class="container-fluid hidden">
     <div class="row justify-content-center bg-secondary align-items-center pt-3 pb-2">
       <div class="col">
-        <h5 class="font-lg text-light text-center">
+        <h5 class="font-lg text-light text-center text-shadow">
           Made With 
           <span>
             <i class="fab fa-js-square text-warning mx-1"></i>

@@ -26,6 +26,11 @@ main {
   user-select: none;
 }
 
+.text-shadow {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
 .skip {
   position: absolute;
   top: 10px;
@@ -33,21 +38,45 @@ main {
   z-index: 10;
 }
 
+.star {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: var(--warning);
+}
+
+.icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  color: var(--primary);
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card:hover .icon {
+  color: var(--info);
+}
+
 @media (min-width: 0) {
   .font-xs {
-    font-size: 0.5rem;
-  }
-  .font-sm {
-    font-size: 0.75rem;
-  }
-  .font-md {
     font-size: 1rem;
   }
-  .font-lg {
+  .font-sm {
     font-size: 1.25rem;
   }
+  .font-md {
+    font-size: 1.5rem;
+  }
+  .font-lg {
+    font-size: 1.75rem;
+  }
   .font-xl {
-    font-size: 1.5em;
+    font-size: 2em;
   }
   .font-xxl {
     font-size: 2.5em;
