@@ -39,6 +39,10 @@ main {
   border-radius: 10px !important;
 }
 
+img.rounded {
+  border-radius: 20px !important;
+}
+
 .underline {
   text-decoration: underline;
 }
@@ -93,6 +97,16 @@ main {
 
 .card:hover .icon {
   color: var(--info);
+}
+
+.contact {
+  cursor: pointer;
+}
+
+.img-card {
+  object-fit: cover;
+  height: 25rem;
+  width: 25rem;
 }
 
 @media (min-width: 0) {

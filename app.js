@@ -1,5 +1,7 @@
 const mother = new Audio('mother.wav')
 
+let show = false
+
 let helloInt = setInterval(() => {
     flash('hello', 300)
 }, 1200);
@@ -7,7 +9,6 @@ let helloInt = setInterval(() => {
 const header = document.getElementById('header')
 const headerName = document.getElementById('header-name')
 const headerIcon = document.getElementById('header-icon')
-const contact = document.getElementById('contact')
 const contactIcon = document.getElementById('contact-icon')
 const cardRow = document.getElementById('card-row')
 const footer = document.getElementById('footer')
@@ -142,8 +143,7 @@ function remove() {
     header.classList.remove('modern', 'bg-secondary', 'hidden')
     headerName.classList.remove('font-xxl', 'text-light', 'text-shadow')
     headerIcon.classList.remove('font-xxl', 'text-shadow', 'text-primary')
-    contact.classList.remove('btn', 'btn-outline-primary', 'bg-transparent', 'border-0', 'font-xxl')
-    contactIcon.classList.remove('hidden', 'text-shadow')
+    contactIcon.classList.remove('text-shadow', 'font-xxl')
     headerName.innerText = ''
 
     document.getElementById('showtime').classList.remove('modern')
@@ -336,11 +336,8 @@ function buildStyle(num) {
             document.getElementById('skip').classList.add('hidden')
             document.getElementById('skip-plus').classList.add('hidden')
             contactIcon.classList.remove('hidden')
-            contact.classList.remove('hidden')
-            contact.classList.add('btn', 'btn-outline-primary', 'bg-transparent', 'border-0')
         setTimeout(() => {
-            contact.classList.add('font-xxl')
-            contactIcon.classList.add('text-shadow')
+            contactIcon.classList.add('text-shadow', 'font-xxl')
         setTimeout(() => {
         
     }, num);
@@ -365,6 +362,7 @@ function skip() {
     document.getElementById('skip').classList.add('hidden')
     document.getElementById('skip-plus').classList.add('hidden')
     document.getElementById('loading').classList.add('hidden')
+    document.getElementById('contacts').classList.add('hidden')
     document.body.classList.remove('code')
 }
 
@@ -379,6 +377,23 @@ window.onload = function () {
 function reloadPage() {
   sessionStorage.setItem("reload", "true");
   document.location.reload();
+}
+
+function contacts() {
+    let contacts = document.getElementById('contacts')
+    let icon = document.getElementById('contact-icon')
+    let showtime = document.getElementById('showtime')
+    if (show) {
+        contacts.classList.add('hidden')
+        icon.classList.remove('text-warning')
+        showtime.classList.remove('hidden')
+        show = false
+    } else {
+        contacts.classList.remove('hidden')
+        icon.classList.add('text-warning')
+        showtime.classList.add('hidden')
+        show = true
+    }
 }
 
 flash('hello', 300)
