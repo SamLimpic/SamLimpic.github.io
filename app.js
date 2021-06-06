@@ -1,5 +1,3 @@
-const mother = new Audio('mother.wav')
-
 let show = false
 
 let helloInt = setInterval(() => {
@@ -56,7 +54,6 @@ const cards = {
 }
 
 function helloWorld(str, num) {
-    mother.play()
     // @ts-ignore
     document.getElementById('start').disabled = true
     document.getElementById('start').classList.add('disable')
@@ -84,7 +81,6 @@ function helloWorld(str, num) {
 }
 
 function lame(str, num) {
-    mother.play()
     // @ts-ignore
     document.getElementById('start').disabled = true
     document.getElementById('start').classList.add('disable')
