@@ -1,4 +1,5 @@
-let mother = new Audio("mother.wav");
+let mother = new Audio("mother.wav")
+mother.volume = .2
 
 let helloInt = setInterval(() => {
     flash('hello', 300)
@@ -106,8 +107,8 @@ function lame(str, num) {
         document.getElementById('start').classList.add('hidden')
         setTimeout(() => {
         reloadPage()
-    }, num*2);
-    }, (num*str.length)+num*22);
+    }, num);
+    }, (num*str.length)+num*20);
 }
 
 function flash(id, num) {
@@ -271,10 +272,10 @@ function buildFooter(num) {
                 const str = 'By_Sam_Limpic'
                 setTimeout(() => {
                     buildStyle(num*4)
-    }, num*12);
+    }, num*10);
     }, num);
     }, str.length * num);
-    }, num*6);
+    }, num);
 }
 
 function buildStyle(num) {
@@ -286,7 +287,7 @@ function buildStyle(num) {
                         setTimeout(function () {
                             cardBody[i].classList.remove('code-text', 'code-back');
                         }, num*i);
-                    }, num/2*i);
+                    }, num*i);
                 }
         setTimeout(() => {
             document.body.classList.remove('code')
@@ -346,13 +347,13 @@ function buildStyle(num) {
     }, num);
     }, num);
     }, num);
-    }, star.length*num);
+    }, star.length/2*num);
     }, num);
     }, num);
     }, card.length*num);
     }, num);
     }, num);
-    }, card.length*1.5*num);
+    }, card.length*2*num);
     }, num);
 }
 
