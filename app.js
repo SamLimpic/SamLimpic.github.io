@@ -1,3 +1,5 @@
+let mother = new Audio("mother.wav");
+
 let helloInt = setInterval(() => {
     flash('hello', 300)
 }, 1200);
@@ -53,10 +55,11 @@ const cards = {
 }
 
 function helloWorld(str, num) {
-    let message = document.getElementById('hello')
+    mother.play();
     // @ts-ignore
     document.getElementById('start').disabled = true
     document.getElementById('start').classList.add('disable')
+    let message = document.getElementById('hello')
     setTimeout(() => {
         clearInterval(helloInt)
         message.classList.remove('code-text')
@@ -67,25 +70,24 @@ function helloWorld(str, num) {
                 message.innerText = ''
                 }
             message.innerText += str[i]
-            }, num * i);
+            }, num/2 * i);
     }
-    }, num);
+    }, num*10);
     setTimeout(() => {
-        let flashInt = setInterval(() => {
-            flash('hello', num)
-        }, num * 4);
+        document.getElementById('intro').classList.add('code-text')
+        document.getElementById('start').classList.add('hidden')
         setTimeout(() => {
-            clearInterval(flashInt)
-            load(num/3)
-        }, num*16);
-    }, (num*str.length)-num);
+            load(num/5)
+        }, num);
+    }, (num*str.length)+num*12);
 }
 
 function lame(str, num) {
-    let message = document.getElementById('hello')
+    mother.play()
     // @ts-ignore
     document.getElementById('start').disabled = true
     document.getElementById('start').classList.add('disable')
+    let message = document.getElementById('hello')
     setTimeout(() => {
         clearInterval(helloInt)
         message.classList.remove('code-text')
@@ -98,13 +100,14 @@ function lame(str, num) {
             message.innerText += str[i]
             }, num * i);
     }
-    }, num);
+    }, num*12);
     setTimeout(() => {
-        message.classList.add('code-text')
+        document.getElementById('intro').classList.add('code-text')
+        document.getElementById('start').classList.add('hidden')
         setTimeout(() => {
         reloadPage()
-    }, num)*3;
-    }, (num*str.length)+num);
+    }, num*2);
+    }, (num*str.length)+num*22);
 }
 
 function flash(id, num) {
@@ -180,7 +183,7 @@ function buildHeader(num) {
     message('header-name', 'Sam_Limpic', num)
     const str = 'Sam_Limpic'
     setTimeout(() => {
-        buildBody(num / 2, 'keepr')
+        buildBody(num / 3, 'keepr')
     }, str.length*num);
 }
 
@@ -207,10 +210,13 @@ function buildBody(num, str) {
             message.innerText = text.replaceAll('_', ' ')
             message = document.getElementById(str + '-text')
             text = cards[str].text.replaceAll(' ', '_')
+            setTimeout(() => {
+                switchBuild(num, str)
+            }, num*text.length/2);
             for (let i = 0; i < text.length; i++) {
                 setTimeout(function () {
                     message.innerText += text[i]
-                }, num/2 * i);
+                }, num * i);
             }
             setTimeout(() => {
                 message.innerText = text.replaceAll('_', ' ')
@@ -223,11 +229,10 @@ function buildBody(num, str) {
                         document.getElementById(str + '-icon')  .classList.remove('hidden')
                         document.getElementById(str + '-icon').classList.add('code-text', 'icon', 'font-xxl')
                         setTimeout(() => {
-                            switchBuild(num, str)
     }, num);
     }, num);
     }, num);
-    }, (num/2*text.length));
+    }, (num*text.length));
     }, (num*text.length));
     }, (num*text.length));
 }
@@ -249,25 +254,27 @@ function switchBuild(num, str) {
         case 'smith':
         buildBody(num, 'miner')
             break;
-        default: buildFooter(num*2)
+        default: buildFooter(num * 5)
     }
 }
 
 function buildFooter(num) {
     footer.classList.remove('hidden')
     footerText.classList.remove('hidden')
-    message('footer-text-1', 'Made_With_', num)
-    const str = 'Made_With_'
     setTimeout(() => {
-        footerIcon.classList.remove('hidden')
+        message('footer-text-1', 'Made_With_', num)
+        const str = 'Made_With_'
         setTimeout(() => {
-            message('footer-text-2', 'By_Sam_Limpic', num)
-            const str = 'By_Sam_Limpic'
+            footerIcon.classList.remove('hidden')
             setTimeout(() => {
-                buildStyle(num*4)
-    }, str.length*num);
+                message('footer-text-2', 'By_Sam_Limpic', num)
+                const str = 'By_Sam_Limpic'
+                setTimeout(() => {
+                    buildStyle(num*4)
+    }, num*12);
     }, num);
-    }, str.length*num);
+    }, str.length * num);
+    }, num*6);
 }
 
 function buildStyle(num) {
@@ -278,64 +285,56 @@ function buildStyle(num) {
                         card[i].classList.add('bg-light', 'text-dark', 'shadow', 'rounded');
                         setTimeout(function () {
                             cardBody[i].classList.remove('code-text', 'code-back');
-                        }, num * i);
-                    }, num * i);
+                        }, num*i);
+                    }, num/2*i);
                 }
         setTimeout(() => {
             document.body.classList.remove('code')
         setTimeout(() => {
-            header.classList.add('modern')
-            headerName.classList.add('font-xxl')
-        setTimeout(() => {
-            for (let i = 0; i < card.length; i++) {
-                setTimeout(function () {
-                    cardTitle[i].classList.add('font-xxl', 'modern', 'underline');
-                    setTimeout(function () {
-                        cardSubtitle[i].classList.add('font-md', 'modern', 'text-muted');
-                        setTimeout(function () {
-                            cardText[i].classList.add('font-lg', 'modern');
-                            setTimeout(function () {
-                                icon[i].classList.remove('code-text');
-                                icon[i].classList.add('text-primary');
-                }, num * i);
-                }, num * i);
-                }, num * i);
-                }, num * i);
-            }
-        setTimeout(() => {
             header.classList.add('bg-secondary')
             headerName.classList.add('text-light')
-        setTimeout(() => {
-            footerText.classList.add('text-light')
             footer.classList.add('bg-secondary')
+            footerText.classList.add('text-light')
+            setTimeout(() => {
+                for (let i = 0; i < card.length; i++) {
+                    setTimeout(function () {
+                        cardTitle[i].classList.add('font-xxl', 'modern', 'underline');
+                        setTimeout(function () {
+                            cardSubtitle[i].classList.add('font-md', 'modern', 'text-muted');
+                            setTimeout(function () {
+                                cardText[i].classList.add('font-lg', 'modern');
+                                icon[i].classList.remove('code-text');
+                                icon[i].classList.add('text-primary');
+                            }, num/2 * i);
+                        }, num/2 * i);
+                    }, num/2 * i);
+                }
+        setTimeout(() => {
+            header.classList.add('modern')
+            headerName.classList.add('font-xxl')
+            footer.classList.add('modern')
+            footer.classList.add('text-center')
         setTimeout(() => {
             for (let i = 0; i < star.length; i++) {
                 setTimeout(function () {
                     star[i].classList.remove('code-text');
                     star[i].classList.add('text-warning');
-                }, num * i);
+                }, num/2 * i);
             }
         setTimeout(() => {
-            footer.classList.add('modern')
-            footer.classList.add('text-center')
             footerText.classList.add('font-lg')
-        setTimeout(() => {
             footerIcon.classList.add('text-warning')
-        setTimeout(() => {
             headerName.classList.add('text-shadow')
             footerText.classList.add('text-shadow')
         setTimeout(() => {
             document.getElementById('loading').classList.add('hidden')
-        setTimeout(() => {
             headerIcon.classList.remove('hidden')
             headerIcon.classList.add('font-xxl')
-        setTimeout(() => {
             headerIcon.classList.add('text-primary')
             headerIcon.classList.add('text-shadow')
         setTimeout(() => {
             document.getElementById('skip').classList.add('hidden')
             document.getElementById('skip-plus').classList.add('hidden')
-        setTimeout(() => {
             contactIcon.classList.remove('hidden')
             contact.classList.remove('hidden')
             contact.classList.add('btn', 'btn-outline-primary', 'bg-transparent', 'border-0')
@@ -347,19 +346,13 @@ function buildStyle(num) {
     }, num);
     }, num);
     }, num);
-    }, num);
-    }, num);
-    }, num);
-    }, num);
-    }, num);
-    }, num);
     }, star.length*num);
-    }, card.length*2*num);
     }, num);
     }, num);
+    }, card.length*num);
     }, num);
     }, num);
-    }, card.length*2*num);
+    }, card.length*1.5*num);
     }, num);
 }
 
