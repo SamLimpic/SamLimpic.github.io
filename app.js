@@ -1,3 +1,6 @@
+let mother = new Audio('mother.wav');
+mother.volume = 0.1
+
 let helloInt = setInterval(() => {
     flash('hello', 300)
 }, 1200);
@@ -53,6 +56,7 @@ const cards = {
 }
 
 function helloWorld(str, num) {
+    mother.play()
     // @ts-ignore
     document.getElementById('start').disabled = true
     document.getElementById('start').classList.add('disable')
@@ -80,7 +84,7 @@ function helloWorld(str, num) {
 }
 
 function lame(str, num) {
-
+    mother.play()
     // @ts-ignore
     document.getElementById('start').disabled = true
     document.getElementById('start').classList.add('disable')
