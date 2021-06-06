@@ -1,4 +1,4 @@
-Preview: https://samlimpic.github.io/
+Portfolio: https://samlimpic.github.io/
 
 I've always had a passion for finding simple solutions to complex problems.  I have a knack for taking a daunting, complex task, breaking it down into its constituent pieces, and fitting each together in a logical manner.  The world of software development was a breath of fresh air to me, as I was able to channel that creative energy into engineering elegant answers to multi-faceted questions.
 
