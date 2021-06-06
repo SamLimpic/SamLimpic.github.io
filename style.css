@@ -2,16 +2,49 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: "Amatic SC", cursive;
+  font-family: "Press Start 2P", cursive;
   background-color: #b3d1cd;
+}
+
+.code {
+  background-color: #111d11;
+  color: #66ff66;
+}
+
+.code-back {
+  background-color: #66ff66;
+}
+
+.code-text {
+  color: #111d11 !important;
+}
+
+.modern {
+  font-family: "Amatic SC", cursive;
 }
 
 .retro {
   font-family: "Press Start 2P", cursive;
 }
 
+.square {
+  border-radius: 0 !important;
+}
+
+.rounded {
+  border-radius: 10px !important;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
 main {
   flex-grow: 1;
+}
+
+.transition {
+  transition: all 0.5s ease-in;
 }
 
 .hidden {
@@ -51,7 +84,7 @@ main {
   right: 15px;
   cursor: pointer;
   color: var(--primary);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .card:hover {
@@ -63,6 +96,9 @@ main {
 }
 
 @media (min-width: 0) {
+  .font-xxs {
+    font-size: 0.75rem;
+  }
   .font-xs {
     font-size: 1rem;
   }
@@ -76,14 +112,17 @@ main {
     font-size: 1.75rem;
   }
   .font-xl {
-    font-size: 2em;
+    font-size: 1.75rem;
   }
   .font-xxl {
-    font-size: 2.5em;
+    font-size: 2.5rem;
   }
 }
 
 @media (min-width: 576px) {
+  .font-xxs {
+    font-size: 0.5rem;
+  }
   .font-xs {
     font-size: 0.75rem;
   }
@@ -97,14 +136,17 @@ main {
     font-size: 1.5rem;
   }
   .font-xl {
-    font-size: 1.75em;
+    font-size: 1.75rem;
   }
   .font-xxl {
-    font-size: 2.75em;
+    font-size: 2.75rem;
   }
 }
 
 @media (min-width: 768px) {
+  .font-xxs {
+    font-size: 0.75rem;
+  }
   .font-xs {
     font-size: 1rem;
   }
@@ -118,14 +160,17 @@ main {
     font-size: 1.75rem;
   }
   .font-xl {
-    font-size: 2em;
+    font-size: 2rem;
   }
   .font-xxl {
-    font-size: 3em;
+    font-size: 3rem;
   }
 }
 
 @media (min-width: 992px) {
+  .font-xxs {
+    font-size: 1rem;
+  }
   .font-xs {
     font-size: 1.25rem;
   }
@@ -139,14 +184,17 @@ main {
     font-size: 2rem;
   }
   .font-xl {
-    font-size: 2.25em;
+    font-size: 2.25rem;
   }
   .font-xxl {
-    font-size: 3.25em;
+    font-size: 3.25rem;
   }
 }
 
 @media (min-width: 1200px) {
+  .font-xxs {
+    font-size: 1.25rem;
+  }
   .font-xs {
     font-size: 1.5rem;
   }
@@ -160,9 +208,9 @@ main {
     font-size: 2.25rem;
   }
   .font-xl {
-    font-size: 2.5em;
+    font-size: 2.5rem;
   }
   .font-xxl {
-    font-size: 3.5em;
+    font-size: 3.5rem;
   }
 }
