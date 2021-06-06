@@ -6,6 +6,10 @@ body {
   background-color: #b3d1cd;
 }
 
+main {
+  flex-grow: 1;
+}
+
 .code {
   background-color: #111d11;
   color: #66ff66;
@@ -37,10 +41,6 @@ body {
 
 .underline {
   text-decoration: underline;
-}
-
-main {
-  flex-grow: 1;
 }
 
 .transition {

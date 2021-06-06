@@ -81,6 +81,32 @@ function helloWorld(str, num) {
     }, (num*str.length)-num);
 }
 
+function lame(str, num) {
+    let message = document.getElementById('hello')
+    // @ts-ignore
+    document.getElementById('start').disabled = true
+    document.getElementById('start').classList.add('disable')
+    setTimeout(() => {
+        clearInterval(helloInt)
+        message.classList.remove('code-text')
+        message.classList.add('text-black')
+        for (let i = 0; i < str.length; i++) {
+            setTimeout(function () {
+            if (message.innerText[0] == '_') {
+                message.innerText = ''
+                }
+            message.innerText += str[i]
+            }, num * i);
+    }
+    }, num);
+    setTimeout(() => {
+        message.classList.add('code-text')
+        setTimeout(() => {
+        reloadPage()
+    }, num)*3;
+    }, (num*str.length)+num);
+}
+
 function flash(id, num) {
     let elem = document.getElementById(id)
     elem.classList.remove('text-black')
