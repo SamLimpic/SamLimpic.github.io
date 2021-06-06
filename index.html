@@ -23,7 +23,7 @@
 
   <header class="container-fluid position-relative">
     <button id="skip" type="button" class="skip btn btn-lg btn-outline-success bg-transparent border-0 font-lg px-md-3 px-2 py-0 pb-2"
-      title="Ain't nobody got time for this..." onclick="lame('...Lame', 200)">
+      title="Ain't nobody got time for this..." onclick="lame('...Lame', 200), myAudio.play()">
       <i class="fas fa-angle-double-right"></i>
     </button>
     <button id="skip-plus" type="button" class="hidden skip btn btn-lg btn-outline-success bg-transparent border-0 font-lg"
@@ -63,7 +63,7 @@
             <h3 class="font-md">Full Stack Developer</h3>
             <h4 class="font-sm">Creative Development <br>
               & Intuitive Design</h4>
-            <button id="start" type="button" class="btn-outline-success ml-md-5 ml-3 mt-md-3 mt-2 pl-2 font-lg" onclick=" helloWorld('Hello_World', 250) ">START</button>
+            <button id="start" type="button" class="btn-outline-success ml-md-5 ml-3 mt-md-3 mt-2 pl-2 font-lg" onclick=" helloWorld('Hello_World', 250), myAudio.play() ">START</button>
           </div>
         </div>
       </div>
@@ -167,6 +167,25 @@
     </div>
   </footer>
 
+    <audio >
+      <source src="/mother.wav" type="audio/wav">
+    </audio>
+  <script>
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+      let audioCtx;
+      let myAudio = document.querySelector('audio');
+      myAudio.volume = 0.1
+      const pre = document.querySelector('pre');
+      const myScript = document.querySelector('script');
+
+      myAudio.addEventListener('play', () => {
+        audioCtx = new AudioContext();
+        let source = audioCtx.createMediaElementSource(myAudio);
+        let gainNode = audioCtx.createGain();
+        source.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+      });
+  </script>
   <script src="app.js"></script>
 </body>
 
