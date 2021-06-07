@@ -107,7 +107,7 @@ function lame(str, num) {
         document.getElementById('start').classList.add('hidden')
         setTimeout(() => {
         reloadPage()
-    }, num*2);
+    }, num);
     }, (num*str.length)+num*22);
 }
 
