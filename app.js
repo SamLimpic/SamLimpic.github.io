@@ -1,4 +1,4 @@
-const mother = new Audio('mother2.wav')
+const mother = new Audio('./assets/mother2.wav')
 
 let show = false
 
