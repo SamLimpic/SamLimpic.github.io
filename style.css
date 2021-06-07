@@ -47,6 +47,10 @@ img.rounded {
   text-decoration: underline;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .transition {
   transition: all 0.5s ease-in;
 }
@@ -70,8 +74,8 @@ img.rounded {
 
 .skip {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   z-index: 10;
 }
 
@@ -101,6 +105,7 @@ img.rounded {
 
 .contact {
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .img-card {

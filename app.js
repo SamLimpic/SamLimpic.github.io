@@ -282,9 +282,9 @@ function buildStyle(num) {
                 for (let i = 0; i < card.length; i++) {
                     setTimeout(function () {
                         card[i].classList.remove('code-text', 'border-success', 'square', 'pt-2');
-                        card[i].classList.add('bg-light', 'text-dark', 'shadow', 'rounded');
                         setTimeout(function () {
                             cardBody[i].classList.remove('code-text', 'code-back');
+                            card[i].classList.add('bg-light', 'text-dark', 'shadow', 'rounded');
                         }, num*i);
                     }, num*i);
                 }
@@ -300,7 +300,7 @@ function buildStyle(num) {
                     setTimeout(function () {
                         cardTitle[i].classList.add('font-xxl', 'modern', 'underline');
                         setTimeout(function () {
-                            cardSubtitle[i].classList.add('font-md', 'modern', 'text-muted');
+                            cardSubtitle[i].classList.add('font-md', 'modern', 'text-muted', 'italic');
                             setTimeout(function () {
                                 cardText[i].classList.add('font-lg', 'modern');
                                 icon[i].classList.remove('code-text');
@@ -386,10 +386,12 @@ function contacts() {
     if (show) {
         contacts.classList.add('hidden')
         icon.classList.remove('text-warning')
+        icon.classList.add('text-primary')
         showtime.classList.remove('hidden')
         show = false
     } else {
         contacts.classList.remove('hidden')
+        icon.classList.remove('text-primary')
         icon.classList.add('text-warning')
         showtime.classList.add('hidden')
         show = true
