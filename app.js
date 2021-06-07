@@ -362,7 +362,6 @@ function skip() {
     document.getElementById('skip').classList.add('hidden')
     document.getElementById('skip-plus').classList.add('hidden')
     document.getElementById('loading').classList.add('hidden')
-    document.getElementById('contacts').classList.add('hidden')
     document.body.classList.remove('code')
 }
 
@@ -384,16 +383,20 @@ function contacts() {
     let icon = document.getElementById('contact-icon')
     let showtime = document.getElementById('showtime')
     if (show) {
-        contacts.classList.add('hidden')
-        icon.classList.remove('text-warning')
+        contacts.classList.add('hide')
+        contacts.classList.remove('show')
         icon.classList.add('text-primary')
-        showtime.classList.remove('hidden')
+        icon.classList.remove('text-warning')
+        showtime.classList.add('show')
+        showtime.classList.remove('hide')
         show = false
     } else {
-        contacts.classList.remove('hidden')
-        icon.classList.remove('text-primary')
+        contacts.classList.add('show')
+        contacts.classList.remove('hide')
         icon.classList.add('text-warning')
-        showtime.classList.add('hidden')
+        icon.classList.remove('text-primary')
+        showtime.classList.add('hide')
+        showtime.classList.remove('show')
         show = true
     }
 }
