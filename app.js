@@ -20,6 +20,7 @@ const cardTitle = Array.from(document.getElementsByClassName('card-title'))
 const cardSubtitle = Array.from(document.getElementsByClassName('card-subtitle'))
 const cardText = Array.from(document.getElementsByClassName('card-text'))
 const star = Array.from(document.getElementsByClassName('star'))
+const fullStack = Array.from(document.getElementsByClassName('full-stack'))
 const icon = Array.from(document.getElementsByClassName('icon'))
 
 const cards = {
@@ -167,6 +168,8 @@ function removeCard(str) {
     document.getElementById(str + '-body').classList.add('code-back')
     if (document.getElementById(str + '-star')) {
         document.getElementById(str + '-star').classList.remove('star', 'font-xs')
+        document.getElementById(str + '-full-stack').classList.remove('star', 'font-xs', 'modern')
+        document.getElementById(str + '-full-stack').innerText = ''
     }
     document.getElementById(str + '-icon').classList.remove('icon', 'font-xxl')
     document.getElementById(str + '-title').innerText = ''
@@ -220,16 +223,24 @@ function buildBody(num, str) {
             }
             setTimeout(() => {
                 message.innerText = text.replaceAll('_', ' ')
+                message = document.getElementById(str + '-full-stack')
+                text = 'Full-Stack'
                 setTimeout(() => {
                     if (document.getElementById(str + '-star')) {
                     document.getElementById(str + '-star').classList.remove('hidden')
                     document.getElementById(str + '-star').classList.add('code-text', 'star', 'font-xs')
-                    }
+                    document.getElementById(str + '-full-stack').classList.add('code-text', 'font-xxs', 'retro')
+                }
+                setTimeout(() => {
+                    for (let i = 0; i < text.length; i++) {
+                        setTimeout(function () {
+                            message.innerText += text[i]
+                            }, num*2 * i);
+                        }
                     setTimeout(() => {
                         document.getElementById(str + '-icon')  .classList.remove('hidden')
                         document.getElementById(str + '-icon').classList.add('code-text', 'icon', 'font-xxl')
-                        setTimeout(() => {
-    }, num);
+    }, num*text.length*2);
     }, num);
     }, num);
     }, (num*text.length));
@@ -310,17 +321,21 @@ function buildStyle(num) {
                     }, num/2 * i);
                 }
         setTimeout(() => {
+            for (let i = 0; i < star.length; i++) {
+                setTimeout(function () {
+                    fullStack[i].classList.remove('code-text', 'font-xxs', 'retro')
+                    fullStack[i].classList.add('text-muted', 'modern')
+                    setTimeout(function () {
+                        star[i].classList.remove('code-text');
+                        star[i].classList.add('text-warning');
+                }, num/2 * i);
+                }, num/2 * i);
+            }
+        setTimeout(() => {
             header.classList.add('modern')
             headerName.classList.add('font-xxl')
             footer.classList.add('modern')
             footer.classList.add('text-center')
-        setTimeout(() => {
-            for (let i = 0; i < star.length; i++) {
-                setTimeout(function () {
-                    star[i].classList.remove('code-text');
-                    star[i].classList.add('text-warning');
-                }, num/2 * i);
-            }
         setTimeout(() => {
             footerText.classList.add('font-lg')
             footerIcon.classList.add('text-warning')
@@ -343,8 +358,8 @@ function buildStyle(num) {
     }, num);
     }, num);
     }, num);
-    }, star.length/2*num);
     }, num);
+    }, star.length/2*num);
     }, num);
     }, card.length*num);
     }, num);
