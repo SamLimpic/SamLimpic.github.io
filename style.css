@@ -86,6 +86,20 @@ img.rounded {
   color: var(--warning);
 }
 
+.resume {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  color: var(--primary);
+  transition: all 0.3s ease-in-out;
+  font-size: 3.5rem;
+}
+
+.resume:hover {
+  color: var(--info);
+}
+
 .icon {
   position: absolute;
   top: 15px;
