@@ -306,40 +306,41 @@ function buildStyle(num) {
             headerName.classList.add('text-light')
             footer.classList.add('bg-secondary')
             footerText.classList.add('text-light')
-            setTimeout(() => {
-                for (let i = 0; i < card.length; i++) {
+        setTimeout(() => {
+            for (let i = 0; i < card.length; i++) {
+                setTimeout(function () {
+                    cardTitle[i].classList.add('font-xxl', 'modern', 'underline');
                     setTimeout(function () {
-                        cardTitle[i].classList.add('font-xxl', 'modern', 'underline');
+                        cardSubtitle[i].classList.add('font-md', 'modern', 'text-muted', 'italic');
                         setTimeout(function () {
-                            cardSubtitle[i].classList.add('font-md', 'modern', 'text-muted', 'italic');
-                            setTimeout(function () {
-                                cardText[i].classList.add('font-lg', 'modern');
-                                icon[i].classList.remove('code-text');
-                                icon[i].classList.add('text-primary');
-                            }, num/2 * i);
+                            cardText[i].classList.add('font-lg', 'modern');
+                            icon[i].classList.remove('code-text');
                         }, num/2 * i);
                     }, num/2 * i);
-                }
-        setTimeout(() => {
-            for (let i = 0; i < star.length; i++) {
-                setTimeout(function () {
-                    fullStack[i].classList.remove('code-text', 'font-xxs', 'retro')
-                    fullStack[i].classList.add('text-muted', 'modern')
-                    setTimeout(function () {
-                        star[i].classList.remove('code-text');
-                        star[i].classList.add('text-warning');
-                }, num/2 * i);
                 }, num/2 * i);
             }
+            setTimeout(function () {
+                for (let i = 0; i < star.length; i++) {
+                    setTimeout(function () {
+                        star[i].classList.remove('code-text');
+                        fullStack[i].classList.add('text-muted', 'modern')
+                        setTimeout(function () {
+                            fullStack[i].classList.remove('code-text', 'font-xxs', 'retro')
+                            star[i].classList.add('text-warning');
+                    }, num * i);
+                    }, num * i);
+                }
+            }, num);
         setTimeout(() => {
             header.classList.add('modern')
-            headerName.classList.add('font-xxl')
             footer.classList.add('modern')
+            headerName.classList.add('font-xxl')
             footer.classList.add('text-center')
         setTimeout(() => {
-            footerText.classList.add('font-lg')
             footerIcon.classList.add('text-warning')
             headerName.classList.add('text-shadow')
+        setTimeout(() => {
+            footerText.classList.add('font-lg')
             footerText.classList.add('text-shadow')
         setTimeout(() => {
             document.getElementById('loading').classList.add('hidden')
@@ -359,7 +360,7 @@ function buildStyle(num) {
     }, num);
     }, num);
     }, num);
-    }, star.length/2*num);
+    }, num);
     }, num);
     }, card.length*num);
     }, num);
