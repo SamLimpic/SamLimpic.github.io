@@ -25,7 +25,7 @@
   --info: #257f88;
   --warning: #ca8813;
   --danger: #ac3931;
-  --light: #f0f3eb;
+  --light: #edefe8;
   --dark: #202a33;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -3170,7 +3170,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #edefe8;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -7780,7 +7780,7 @@ a.text-danger:focus {
   color: #702520 !important;
 }
 .text-light {
-  color: #f0f3eb !important;
+  color: #edefe8 !important;
 }
 a.text-light:hover,
 a.text-light:focus {
