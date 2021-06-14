@@ -23,7 +23,7 @@
 <body class="code">
 
   <header class="container-fluid position-relative">
-    <button id="skip" type="button" class="skip btn btn-lg btn-outline-success bg-transparent border-0 font-lg px-md-3 px-2 py-0 pb-2"
+    <button id="skip" type="button" class="skip btn btn-lg btn-outline-success bg-transparent border-0 font-lg px-3 py-0 pb-2"
       title="Ain't nobody got time for this..." onclick="lame('...Lame', 200)">
       <i class="fas fa-angle-double-right"></i>
     </button>
@@ -44,7 +44,8 @@
         </h1>
       </div>
       <div class="col-3 text-right">
-          <i id="contact-icon" class="hidden contact fas fa-address-card pre text-primary text-shadow font-xxl px-2" onclick="contacts()"></i>
+          <i id="contact-icon" class="hidden contact fas fa-address-card text-primary text-shadow font-xxl px-2" onclick="contacts()"></i>
+          <i id="app-icon" class="d-none contact no-click far fa-address-card text-primary text-shadow font-xxl px-2"></i>
       </div>
     </div>
   </header>
@@ -67,11 +68,12 @@
         </div>
       </div>
     </section>
-    <section id="showtime" class="modern show m-md-4 m-3">
-      <div id="card-row" class="row justify-content-around">
+
+    <section id="showtime" class="modern show">
+      <div id="card-row" class="row justify-content-around my-md-4 my-3 mx-2">
 
         <div id="keepr" class="hidden col-lg-4 col-md-6 col-12 p-3">
-          <div id="keepr-card" class="card transition rounded shadow bg-light" onclick="window.open('https://samwise-fellowship.herokuapp.com/#/')">
+          <div id="keepr-card" class="card transition rounded shadow bg-light" onclick="expand('keepr')">
             <div id="keepr-body" class="card-body position-relative">
               <i id="keepr-star" class="hidden fas fa-star star font-xs"><span id="keepr-full-stack" class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
               <i id="keepr-icon" class="hidden fab fa-facebook-f icon font-xxl"></i>
@@ -84,7 +86,7 @@
         </div>
 
         <div id="tavern" class="hidden col-lg-4 col-md-6 col-12 p-3">
-          <div id="tavern-card" class="card transition rounded shadow bg-light" onclick="window.open('https://samwise-the-tavern.herokuapp.com/#/')">
+          <div id="tavern-card" class="card transition rounded shadow bg-light" onclick="expand('tavern')">
             <div id="tavern-body" class="card-body position-relative">
               <i id="tavern-star" class="hidden fas fa-star star font-xs"><span id="tavern-full-stack" class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
               <i id="tavern-icon" class="hidden fas fa-dice-d20 icon font-xxl"></i>
@@ -96,7 +98,7 @@
         </div>
 
         <div id="bug" class="hidden col-lg-4 col-md-6 col-12 p-3">
-          <div id="bug-card" class="card transition rounded shadow bg-light" onclick="window.open('https://bug-catcher-vue.herokuapp.com/#/')">
+          <div id="bug-card" class="card transition rounded shadow bg-light" onclick="expand('bug')">
             <div id="bug-body" class="card-body position-relative">
               <i id="bug-star" class="hidden fas fa-star star font-xs"><span id="bug-full-stack" class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
               <i id="bug-icon" class="hidden fas fa-bug icon font-xxl"></i>
@@ -109,7 +111,7 @@
         </div>
 
         <div id="bill" class="hidden col-lg-4 col-md-6 col-12 p-3">
-          <div id="bill-card" class="card transition rounded shadow bg-light" onclick="window.open('https://bill-boards.herokuapp.com/#/')">
+          <div id="bill-card" class="card transition rounded shadow bg-light" onclick="expand('bill')">
             <div id="bill-body" class="card-body position-relative">
               <i id="bill-star" class="hidden fas fa-star star font-xs"><span id="bill-full-stack" class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
               <i id="bill-icon" class="hidden fas fa-sign icon font-xxl"></i>
@@ -122,8 +124,9 @@
         </div>
 
         <div id="smith" class="hidden col-lg-4 col-md-6 col-12 p-3">
-          <div id="smith-card" class="card transition rounded shadow bg-light" onclick="window.open('https://samlimpic.github.io/master-smith/')">
+          <div id="smith-card" class="card transition rounded shadow bg-light" onclick="expand('smith')">
             <div id="smith-body" class="card-body position-relative">
+              <i id="smith-star" class="d-none fas fa-star star font-xs"><span id="smith-full-stack" class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
               <i id="smith-icon" class="hidden fas fa-fire-alt icon font-xxl"></i>
               <h2 id="smith-title" class="card-title font-xxl"><u>Master Smith</u></h2>
               <h3 id="smith-subtitle" class="card-subtitle text-muted font-md"><i>Javascript - SCSS</i></h3>
@@ -134,8 +137,9 @@
         </div>
 
         <div id="miner" class="hidden col-lg-4 col-md-6 col-12 p-3">
-          <div id="miner-card" class="card transition rounded shadow bg-light" onclick=" window.open('https://samlimpic.github.io/dungeon-miner/')">
+          <div id="miner-card" class="card transition rounded shadow bg-light" onclick="expand('miner')">
             <div id="miner-body" class="card-body position-relative">
+              <i id="miner-star" class="d-none fas fa-star star font-xs"><span id="miner-full-stack" class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
               <i id="miner-icon" class="hidden fas fa-dungeon icon font-xxl"></i>
               <h2 id="miner-title" class="card-title font-xxl"><u>Dungeoneer</u></h2>
               <h3 id="miner-subtitle" class="card-subtitle text-muted font-md"><i>Javascript</i></h3>
@@ -146,42 +150,232 @@
         </div>
       </div>
     </section>
-    <!-- <section id="apps" class="hidden">
-      <div class="row justify-content-center">
-        <div id="keepr-app" class="col-lg-7 col-md-9 col-11 pb-3">
-          <div class="row justify-content-between rounded shadow d-md-flex d-none bg-light p-3">
-            <div class="col-5 p-2 my-auto">
-                    <img class="w-100 rounded" src="./assets/headshot.jpg" alt="">
+
+    <section id="apps" class="modern transition hide">
+      <div id="apps-row" class="d-none row justify-content-center m-md-5 my-4 py-md-0 py-2 m-3">
+        <div id="keepr-app" class="d-none col-lg-11 col-12">
+          <div class="row justify-content-between rounded shadow bg-light p-md-3 p-2" onclick="expand('keepr')">
+            <div class="col-sm-6 col-12 position-relative pt-md-4 pl-md-4 pt-3 pl-3 pb-sm-3 pb-2">
+              <i class="fas fa-external-link-alt text-shadow thumb font-xl d-sm-none d-block"
+              onclick="window.open('https://samwise-fellowship.herokuapp.com/#/')"></i>
+              <h2 class="font-xxl"><i id="keepr-app-icon" class="fab fa-facebook-f text-info mr-3"></i><u>Fellowship</u></h2>
+              <h3 class="font-lg">Full-Stack: <span class="font-md text-muted"><i>Vue3, SCSS, C#</i></span></h3>
+              <h3 class="font-lg">Completed In: <span class="font-md text-muted"><i>40 Hours</i></span></h3>
+              <h3 class="font-lg">Team Size: <span class="font-md text-muted"><i>Individual</i></span></h3>
+              <h3 class="font-lg">Team Role: <span class="font-md text-muted"><i>Full-Stack</i></span></h3>
             </div>
-            <div class="col-7 position-relative pl-3">
-                    <a href="/Sam Limpic Resume 2021.pdf" title="Download Resume" download>
-                      <i class="fas fa-file-alt contact text-shadow resume"></i>
-                    </a>
-                    <h2 class="font-xxl"><u>Contact Me</u></h2>
-                    <h3 class="font-xl">samlimpic@gmail.com</h3>
-                    <h4 class="font-sm">(760) 855-1313</h4>
-                    <h4 class="font-lg">Boise, ID</h4>
-                    <h4 class="font-xl pt-2"><u>Technologies</u></h4>
-                    <h5 class="font-sm"><i>HTML5, SASS, Javascript 6, Vue3</i></h5>
-                    <h5 class="font-sm"><i>Node.JS, C#, MongoDB, SQL</i></h5>
-                    <div class="contact pt-2">
-                      <h4 class="font-md" onclick="window.open('http://github.com/SamLimpic')"><span>
-                          <i class="fab fa-github-square text-primary pr-2"></i></span>
-                        <i>/SamLimpic</i>
-                      </h4>
-                      <h4 class="font-md" onclick="window.open('http://linkedin.com/in/samuel-limpic')"><span>
-                          <i class="fab fa-linkedin text-primary pr-2"></i></span>
-                        <i>/in/samuel-limpic</i>
-                      </h4>
-                    </div>
+            <div class="col-sm-6 d-sm-flex d-none mb-auto pt-md-4 pr-md-4 pt-sm-3 pr-sm-3 pt-2 pr-2 pb-sm-3 pb-2">
+              <div class="position-relative img-thumb" onclick="window.open('https://samwise-fellowship.herokuapp.com/#/')">
+                <i class="fas fa-external-link-alt text-shadow thumb font-xl"></i>
+                <img class="w-100 rounded" loading="lazy" src="./assets/Fellowship.jpg" alt="">
+              </div>
             </div>
+            <ul class="font-md mx-md-3 mr-4">
+              <li>
+                A site inspired by Pinterest, populated with "users" from The Lord of the Rings, with authentication through Auth0.
+              </li>
+              <li>
+                Allows multiple user profiles, user-submitted "Keeps", and user "Vaults".
+              </li> 
+              <li>
+                Users can post Keeps, and save any user's Keeps to a personal Vault.
+              </li>
+              <li>
+                A user's keeps and public vaults can be viewed on their public profile page.
+              </li>
+              <li>
+                Posts are tagged, and users can search for Keeps by tag name.
+              </li>
+              <li>
+                User profiles, keeps, vaults, and tags are all stored in a MySQL database.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="tavern-app" class="d-none col-lg-10 col-md-11 col-12">
+          <div class="row justify-content-between rounded shadow bg-light p-md-3 p-2" onclick="expand('tavern')">
+            <div
+              class="col-sm-6 col-12 position-relative pt-md-4 pl-md-4 pt-3 pl-3 pb-sm-3 pb-2">
+              <i class="fas fa-external-link-alt text-shadow thumb font-xl d-sm-none d-block"
+                onclick="window.open('https://samwise-the-tavern.herokuapp.com/#/')"></i>
+              <h2 class="font-xxl"><i id="tavern-app-icon" class="fas fa-dice-d20 text-info mr-3"></i><u>The Tavern</u></h2>
+              <h3 class="font-lg">Full-Stack: <span class="font-md text-muted"><i>Vue3, SCSS, Node.js</i></span></h3>
+              <h3 class="font-lg">Completed In: <span class="font-md text-muted"><i>80 Hours</i></span></h3>
+              <h3 class="font-lg">Team Size: <span class="font-md text-muted"><i>Four Developers</i></span></h3>
+              <h3 class="font-lg">Team Role: <span class="font-md text-muted"><i>Product Owner</i></span></h3>
+            </div>
+            <div class="col-sm-6 d-sm-flex d-none mb-auto pt-md-4 pr-md-4 pt-sm-3 pr-sm-3 pt-2 pr-2 pb-sm-3 pb-2">
+              <div class="position-relative img-thumb" onclick="window.open('https://samwise-the-tavern.herokuapp.com/#/')">
+                <i class="fas fa-external-link-alt text-shadow thumb font-xl"></i>
+                <img class="w-100 rounded" loading="lazy" src="./assets/The Tavern.jpg" alt="">
+              </div>
+            </div>
+            <ul class="font-md mx-md-3 mr-4">
+              <li>
+                An interactive character creation app for Dungeons and Dragons, with authentication through Auth0.
+              </li>
+              <li>
+                Designed as an entry point for users with little knowledge of the game.
+              </li>
+              <li>
+                Allows multiple user profiles, and stores all user-generated Characters.
+              </li>
+              <li>
+                Users complete a personality profile to determine their ideal character.
+              </li>
+              <li>
+                Pulls data from a custom-built MongoDB Database to build characters according to the official D&D ruleset.
+              </li>
+              <li>
+                Produces a fully-playable starting character that can be referenced from a user's character profile page.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="bug-app" class="d-none col-lg-10 col-md-11 col-12">
+          <div class="row justify-content-between rounded shadow bg-light p-md-3 p-2" onclick="expand('bug')">
+            <div class="col-sm-6 col-12 position-relative pt-md-4 pl-md-4 pt-3 pl-3 pb-sm-3 pb-2">
+              <i class="fas fa-external-link-alt text-shadow thumb font-xl d-sm-none d-block"
+                onclick="window.open('https://bug-catcher-vue.herokuapp.com/#/')"></i>
+              <h2 class="font-xxl"><i id="bug-app-icon" class="fas fa-bug text-info mr-3"></i><u>Bug Catcher</u></h2>
+              <h3 class="font-lg">Full-Stack: <span class="font-md text-muted"><i>Vue3, SCSS, Node.js</i></span></h3>
+              <h3 class="font-lg">Completed In: <span class="font-md text-muted"><i>20 Hours</i></span></h3>
+              <h3 class="font-lg">Team Size: <span class="font-md text-muted"><i>Individual</i></span></h3>
+              <h3 class="font-lg">Team Role: <span class="font-md text-muted"><i>Full-Stack</i></span></h3>
+            </div>
+            <div class="col-sm-6 d-sm-flex d-none mb-auto pt-md-4 pr-md-4 pt-sm-3 pr-sm-3 pt-2 pr-2 pb-sm-3 pb-2">
+              <div class="position-relative img-thumb" onclick="window.open('https://bug-catcher-vue.herokuapp.com/#/')">
+                <i class="fas fa-external-link-alt text-shadow thumb font-xl"></i>
+                <img class="w-100 rounded" loading="lazy" src="./assets/Bug Catcher.jpg" alt="">
+              </div>
+            </div>
+            <ul class="font-md mx-md-3 mr-4">
+              <li>
+                A tech site inspired by StackOverflow, with authentication through Auth0.
+              </li>
+              <li>
+                Designed as a portal for user-submitted software "Bugs", allowing users to comment until Bugs are closed.
+              </li>
+              <li>
+                Modified to instead allow users to "Catch" and "Release" Bug Pokemon.
+              </li>
+              <li>
+                Data is pulled from the Pokemon API and displayed on a Bug's info page.
+              </li>
+              <li>
+                Users may "Release" bugs, but their data remains in a MongoDB database to be viewed publicly by all users.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="bill-app" class="d-none col-lg-10 col-md-11 col-12">
+          <div class="row justify-content-between rounded shadow bg-light p-md-3 p-2" onclick="expand('bill')">
+            <div class="col-sm-6 col-12 position-relative pt-md-4 pl-md-4 pt-3 pl-3 pb-sm-3 pb-2">
+              <i class="fas fa-external-link-alt text-shadow thumb font-xl d-sm-none d-block"
+                onclick="window.open('https://bill-boards.herokuapp.com/#/')"></i>
+              <h2 class="font-xxl"><i id="bill-app-icon" class="fas fa-sign text-info mr-3"></i><u>Bill Boards</u></h2>
+              <h3 class="font-lg">Full-Stack: <span class="font-md text-muted"><i>Vue3, SCSS, Node.js</i></span></h3>
+              <h3 class="font-lg">Completed In: <span class="font-md text-muted"><i>40 Hours</i></span></h3>
+              <h3 class="font-lg">Team Size: <span class="font-md text-muted"><i>Two Developers</i></span></h3>
+              <h3 class="font-lg">Team Role: <span class="font-md text-muted"><i>Front-End</i></span></h3>
+            </div>
+            <div class="col-sm-6 d-sm-flex d-none mb-auto pt-md-4 pr-md-4 pt-sm-3 pr-sm-3 pt-2 pr-2 pb-sm-3 pb-2">
+              <div class="position-relative img-thumb" onclick="window.open('https://bill-boards.herokuapp.com/#/')">
+                <i class="fas fa-external-link-alt text-shadow thumb font-xl"></i>
+                <img class="w-100 rounded" loading="lazy" src="./assets/Bill Boards.jpg" alt="">
+              </div>
+            </div>
+            <ul class="font-md mx-md-3 mr-4">
+              <li>
+                A task manager inspired by Trello, with authentication through Auth0.
+              </li>
+              <li>
+                Users can create "Boards" full of "Lists", which contain "Tasks", utilizing embedded Vue components.
+              </li>
+              <li>
+                Tasks can be commented on and removed when complete.
+              </li>
+              <li>
+                Tasks can be moved between lists utilizing HTML Drag-and-Drop.
+              </li>
+              <li>
+                Boards are tied to a user's account, stored in a MongoDB database.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="smith-app" class="d-none col-lg-10 col-md-11 col-12">
+          <div class="row justify-content-between rounded shadow bg-light p-md-3 p-2" onclick="expand('smith')">
+            <div class="col-sm-6 col-12 position-relative pt-md-4 pl-md-4 pt-3 pl-3 pb-sm-3 pb-2">
+              <i class="fas fa-external-link-alt text-shadow thumb font-xl d-sm-none d-block"
+                onclick="window.open('https://samlimpic.github.io/master-smith/')"></i>
+              <h2 class="font-xxl"><i id="smith-app-icon" class="fas fa-fire-alt text-info mr-3"></i><u>Master Smith</u></h2>
+              <h3 class="font-lg">Full-Stack: <span class="font-md text-muted"><i>Javascript, SCSS</i></span></h3>
+              <h3 class="font-lg">Completed In: <span class="font-md text-muted"><i>20 Hours</i></span></h3>
+              <h3 class="font-lg">Team Size: <span class="font-md text-muted"><i>Individual</i></span></h3>
+              <h3 class="font-lg">Team Role: <span class="font-md text-muted"><i>Front-End</i></span></h3>
+            </div>
+            <div class="col-sm-6 d-sm-flex d-none mb-auto pt-md-4 pr-md-4 pt-sm-3 pr-sm-3 pt-2 pr-2 pb-sm-3 pb-2">
+              <div class="position-relative img-thumb" onclick="window.open('https://samlimpic.github.io/master-smith/')">
+                <i class="fas fa-external-link-alt text-shadow thumb font-xl"></i>
+                <img class="w-100 rounded" loading="lazy" src="./assets/Smith.jpg" alt="">
+              </div>
+            </div>
+            <ul class="font-md mx-md-3 mr-4">
+              <li>
+                Originally a task manager app, reworked as a Blacksmith simulator.
+              </li>
+              <li>
+                Users can place "Orders", to be filled by checking the required "Tasks".
+              </li>
+              <li>
+                Utilizing custom art assets, updating the image with each completed task.
+              </li>
+              <li>
+                Designed as a smaller piece of a future integrated browser game.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="miner-app" class="d-none col-lg-10 col-md-11 col-12">
+          <div class="row justify-content-between rounded shadow bg-light p-md-3 p-2" onclick="expand('miner')">
+            <div class="col-sm-6 col-12 position-relative pt-md-4 pl-md-4 pt-3 pl-3 pb-sm-3 pb-2">
+              <i class="fas fa-external-link-alt text-shadow thumb font-xl d-sm-none d-block"
+                onclick="window.open('https://samlimpic.github.io/dungeon-miner/')"></i>
+              <h2 class="font-xxl"><i id="miner-app-icon" class="fas fa-dungeon text-info mr-3"></i><u>Master Smith</u></h2>
+              <h3 class="font-lg">Full-Stack: <span class="font-md text-muted"><i>Javascript, SCSS</i></span></h3>
+              <h3 class="font-lg">Completed In: <span class="font-md text-muted"><i>20 Hours</i></span></h3>
+              <h3 class="font-lg">Team Size: <span class="font-md text-muted"><i>Individual</i></span></h3>
+              <h3 class="font-lg">Team Role: <span class="font-md text-muted"><i>Front-End</i></span></h3>
+            </div>
+            <div class="col-sm-6 d-sm-flex d-none mb-auto pt-md-4 pr-md-4 pt-sm-3 pr-sm-3 pt-2 pr-2 pb-sm-3 pb-2">
+              <div class="position-relative img-thumb" onclick="window.open('https://samlimpic.github.io/dungeon-miner/')">
+                <i class="fas fa-external-link-alt text-shadow thumb font-xl"></i>
+                <img class="w-100 rounded" loading="lazy" src="./assets/Dungeoneer.jpg" alt="">
+              </div>
+            </div>
+            <ul class="font-md mx-md-3 mr-4">
+              <li>
+                An original multi-level point-and-click adventure game.
+              </li>
+              <li>
+                Users move through varied levels, defeating enemies and gaining money to purchase levelled upgrades.
+              </li>
+              <li>
+                Utilizing custom art assets, updating character images with each purchase.
+              </li>
+              <li>
+                Designed as a smaller piece of a future integrated browser game.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </section> -->
-    <section id="contacts" class="modern transition hide m-md-4 m-3">
-      <div class="row justify-content-center">
-        <div id="profile" class="col-lg-7 col-md-9 col-11 pb-3">
+    </section>
+
+    <section id="contacts" class="modern transition hide">
+      <div id="contacts-row" class="d-none row justify-content-center m-md-5 m-4">
+        <div id="profile" class="col-lg-7 col-md-9 col-11">
           <div class="row justify-content-between rounded shadow d-md-flex d-none bg-light p-3">
             <div class="col-5 p-2 my-auto">
               <img class="w-100 rounded" src="./assets/headshot.jpg" alt="">

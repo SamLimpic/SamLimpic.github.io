@@ -147,6 +147,7 @@ function remove() {
     contactIcon.classList.remove('text-shadow', 'font-xxl')
     headerName.innerText = ''
 
+    document.getElementById('showtime').classList.add('no-click')
     document.getElementById('showtime').classList.remove('modern')
     removeCard('keepr')
     removeCard('tavern')
@@ -237,9 +238,9 @@ function buildBody(num, str) {
                             message.innerText += text[i]
                             }, num*2 * i);
                         }
-                    setTimeout(() => {
-                        document.getElementById(str + '-icon')  .classList.remove('hidden')
-                        document.getElementById(str + '-icon').classList.add('code-text', 'icon', 'font-xxl')
+                setTimeout(() => {
+                    document.getElementById(str + '-icon').classList.remove('hidden')
+                    document.getElementById(str + '-icon').classList.add('code-text', 'icon', 'font-xxl')
     }, num*text.length*2);
     }, num);
     }, num);
@@ -355,7 +356,7 @@ function buildStyle(num) {
         setTimeout(() => {
             contactIcon.classList.add('text-shadow', 'font-xxl')
         setTimeout(() => {
-        
+            document.getElementById('showtime').classList.remove('no-click')
     }, num);
     }, num);
     }, num);
@@ -396,23 +397,64 @@ function reloadPage() {
 
 function contacts() {
     let contacts = document.getElementById('contacts')
+    let row = document.getElementById('contacts-row')
     let icon = document.getElementById('contact-icon')
     let showtime = document.getElementById('showtime')
+    let cardRow = document.getElementById('card-row')
     if (show) {
         contacts.classList.add('hide')
         contacts.classList.remove('show')
+        row.classList.add('d-none')
         icon.classList.add('text-primary')
         icon.classList.remove('text-warning')
         showtime.classList.add('show')
         showtime.classList.remove('hide')
+        cardRow.classList.remove('d-none')
         show = false
     } else {
         contacts.classList.add('show')
         contacts.classList.remove('hide')
+        row.classList.remove('d-none')
         icon.classList.add('text-warning')
         icon.classList.remove('text-primary')
         showtime.classList.add('hide')
         showtime.classList.remove('show')
+        cardRow.classList.add('d-none')
+        show = true
+    }
+}
+
+function expand(string) {
+    let apps = document.getElementById('apps')
+    let row = document.getElementById('apps-row')
+    let app = document.getElementById(`${string}-app`)
+    let icon = document.getElementById(`${string}-app-icon`)
+    let showtime = document.getElementById('showtime')
+    let contactIcon = document.getElementById('contact-icon')
+    let appIcon = document.getElementById('app-icon')
+    if (show) {
+        app.classList.add('d-none')
+        row.classList.add('d-none')
+        apps.classList.add('hide')
+        apps.classList.remove('show')
+        icon.classList.add('text-info')
+        icon.classList.remove('text-warning')
+        showtime.classList.add('show')
+        showtime.classList.remove('hide')
+        contactIcon.classList.remove('d-none')
+        appIcon.classList.add('d-none')
+        show = false
+    } else {
+        app.classList.remove('d-none')
+        row.classList.remove('d-none')
+        apps.classList.add('show')
+        apps.classList.remove('hide')
+        icon.classList.add('text-warning')
+        icon.classList.remove('text-info')
+        showtime.classList.add('hide')
+        showtime.classList.remove('show')
+        contactIcon.classList.add('d-none')
+        appIcon.classList.remove('d-none')
         show = true
     }
 }
