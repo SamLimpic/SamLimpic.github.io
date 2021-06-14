@@ -12,7 +12,6 @@ main {
 
 .code {
   font-family: "Press Start 2P", cursive;
-  font-style: italic;
   background-color: #111d11;
   color: #66ff66;
 }
@@ -73,6 +72,23 @@ img.rounded {
 .text-shadow {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+
+.app-icon {
+  cursor: pointer;
+  color: var(--primary);
+  transition: all 0.3s ease-in-out;
+}
+
+.box-shadow {
+  box-shadow: 7.5px 7.5px 15px var(--dark);
+  -moz-box-shadow: 7.5px 7.5px 15px var(--dark);
+  -webkit-box-shadow: 7.5px 7.5px 15px var(--dark);
+  -o-box-shadow: 7.5px 7.5px 15px var(--dark);
+}
+
+.box-shadow:hover .app-icon {
+  color: var(--info);
 }
 
 .skip {
