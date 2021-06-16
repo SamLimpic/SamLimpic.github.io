@@ -42,17 +42,17 @@ const cards = {
     bill: {
         title: 'Bill Boards',
         subtitle: 'Vue3 - SCSS - Node.js - MongoDB',
-        text: 'A task manager inspired by Trello, utilizing FillMurray to its upmost'
+        text: 'A task manager inspired by Trello, utilizing Fill Murray to its upmost'
     },
     smith: {
         title: 'Master Smith',
-        subtitle: 'Javascript - SCSS',
-        text: 'A task-list blacksmith simulation utilizing custom art assets'
+        subtitle: 'Javascript - CSS',
+        text: 'A task-list blacksmith simulator utilizing custom art assets'
     },
     miner: {
         title: 'Dungeoneer',
-        subtitle: 'Javascript',
-        text: 'A multi-stage click-counting adventure utilizing custom art assets'
+        subtitle: 'Javascript - CSS',
+        text: 'A click-counting adventure utilizing custom art assets'
     }
 }
 
@@ -144,10 +144,12 @@ function load(num) {
 function remove() {
     header.classList.remove('modern', 'bg-secondary', 'hidden')
     headerName.classList.remove('font-xxl', 'text-light', 'text-shadow')
-    headerIcon.classList.remove('font-xxl', 'text-shadow', 'text-primary')
+    headerName.classList.add('font-md')
+    headerIcon.classList.remove('fa-anchor', 'font-xxl', 'text-shadow', 'text-primary', 'ml-2')
+    headerIcon.classList.add('fa-circle-notch', 'fa-spin', 'font-xl')
+    contactIcon.classList.add('hide')
     contactIcon.classList.remove('text-shadow', 'font-xxl')
     headerName.innerText = ''
-
     document.getElementById('showtime').classList.add('no-click')
     document.getElementById('showtime').classList.remove('modern')
     removeCard('keepr')
@@ -161,6 +163,7 @@ function remove() {
     document.getElementById('footer-text-1').innerText = ''
     document.getElementById('footer-text-2').innerText = ''
     footerText.classList.remove('font-lg', 'text-light', 'text-center', 'text-shadow')
+    footerText.classList.add('font-xs')
     footerIcon.classList.remove('text-warning')
 }
 
@@ -168,18 +171,21 @@ function removeCard(str) {
     document.getElementById(str + '-card').classList.remove('shadow', 'bg-light', 'rounded')
     document.getElementById(str + '-card').classList.add('border-success', 'square')
     document.getElementById(str + '-body').classList.add('code-back')
-    if (document.getElementById(str + '-star')) {
-        document.getElementById(str + '-star').classList.remove('star', 'font-xs')
-        document.getElementById(str + '-full-stack').classList.remove('star', 'font-xs', 'modern')
-        document.getElementById(str + '-full-stack').innerText = ''
-    }
-    document.getElementById(str + '-icon').classList.remove('icon', 'font-xxl')
+    document.getElementById(str + '-star').classList.remove('star', 'font-xs')
+    document.getElementById(str + '-star').classList.add('font-xxs')
+    document.getElementById(str + '-full-stack').classList.remove('star', 'modern')
+    document.getElementById(str + '-full-stack').classList.add('font-xxxs')
+    document.getElementById(str + '-full-stack').innerText = ''
+    document.getElementById(str + '-icon').classList.remove('icon')
     document.getElementById(str + '-title').innerText = ''
     document.getElementById(str + '-title').classList.remove('font-xxl')
+    document.getElementById(str + '-title').classList.add('font-xs', 'mt-md-3', 'mt-sm-1')
     document.getElementById(str + '-subtitle').innerText = ''
     document.getElementById(str + '-subtitle').classList.remove('text-muted', 'font-md')
+    document.getElementById(str + '-subtitle').classList.add('font-xxxs')
     document.getElementById(str + '-text').innerText = ''
-    document.getElementById(str + '-text').classList.remove('font-lg')
+    document.getElementById(str + '-text').classList.remove('font-lg', 'pl-4')
+    document.getElementById(str + '-text').classList.add('font-xxs')
 }
 
 function buildHeader(num) {
@@ -228,11 +234,9 @@ function buildBody(num, str) {
                 message = document.getElementById(str + '-full-stack')
                 text = 'Full-Stack'
                 setTimeout(() => {
-                    if (document.getElementById(str + '-star')) {
                     document.getElementById(str + '-star').classList.remove('hidden')
                     document.getElementById(str + '-star').classList.add('code-text', 'star', 'font-xs')
-                    document.getElementById(str + '-full-stack').classList.add('code-text', 'font-xxs', 'retro')
-                }
+                    document.getElementById(str + '-full-stack').classList.add('code-text', 'retro')
                 setTimeout(() => {
                     for (let i = 0; i < text.length; i++) {
                         setTimeout(function () {
@@ -241,7 +245,7 @@ function buildBody(num, str) {
                         }
                 setTimeout(() => {
                     document.getElementById(str + '-icon').classList.remove('hidden')
-                    document.getElementById(str + '-icon').classList.add('code-text', 'icon', 'font-xxl')
+                    document.getElementById(str + '-icon').classList.add('code-text', 'icon', 'font-lg')
     }, num*text.length*2);
     }, num);
     }, num);
@@ -303,7 +307,6 @@ function buildStyle(num) {
                 }
         setTimeout(() => {
             document.body.classList.remove('code')
-        setTimeout(() => {
             header.classList.add('bg-secondary')
             headerName.classList.add('text-light')
             footer.classList.add('bg-secondary')
@@ -312,11 +315,12 @@ function buildStyle(num) {
             for (let i = 0; i < card.length; i++) {
                 setTimeout(function () {
                     cardTitle[i].classList.add('font-xxl', 'modern', 'underline');
+                    cardTitle[i].classList.remove('mt-md-3');
                     setTimeout(function () {
                         cardSubtitle[i].classList.add('font-md', 'modern', 'text-muted', 'italic');
                         setTimeout(function () {
-                            cardText[i].classList.add('font-lg', 'modern');
-                            icon[i].classList.remove('code-text');
+                            cardText[i].classList.add('font-lg', 'modern', 'pl-4');
+                            icon[i].classList.remove('code-text', 'font-lg');
                         }, num/2 * i);
                     }, num/2 * i);
                 }, num/2 * i);
@@ -327,7 +331,7 @@ function buildStyle(num) {
                         star[i].classList.remove('code-text');
                         fullStack[i].classList.add('text-muted', 'modern')
                         setTimeout(function () {
-                            fullStack[i].classList.remove('code-text', 'font-xxs', 'retro')
+                            fullStack[i].classList.remove('code-text', 'font-xxxs', 'retro')
                             star[i].classList.add('text-warning');
                     }, num * i);
                     }, num * i);
@@ -336,37 +340,28 @@ function buildStyle(num) {
         setTimeout(() => {
             header.classList.add('modern')
             footer.classList.add('modern')
-            headerName.classList.add('font-xxl')
-            footer.classList.add('text-center')
+            document.getElementById('skip-plus').classList.add('hidden')
         setTimeout(() => {
-            footerIcon.classList.add('text-warning')
+            footer.classList.add('text-center')
+            footerText.classList.add('font-lg')
+        setTimeout(() => {
+            headerName.classList.add('font-xxl')
             headerName.classList.add('text-shadow')
         setTimeout(() => {
-            footerText.classList.add('font-lg')
+            footerIcon.classList.add('text-warning')
             footerText.classList.add('text-shadow')
         setTimeout(() => {
-            document.getElementById('loading').classList.add('hidden')
-            headerIcon.classList.remove('hidden')
-            headerIcon.classList.add('font-xxl')
-            headerIcon.classList.add('text-primary')
-            headerIcon.classList.add('text-shadow')
-        setTimeout(() => {
-            document.getElementById('skip').classList.add('hidden')
-            document.getElementById('skip-plus').classList.add('hidden')
-            contactIcon.classList.remove('hidden')
-        setTimeout(() => {
+            headerIcon.classList.remove('fa-circle-notch', 'fa-spin')
+            headerIcon.classList.add('fa-anchor', 'text-primary', 'text-shadow','font-xxl', 'ml-2')
+            contactIcon.classList.remove('hide')
             contactIcon.classList.add('text-shadow', 'font-xxl')
-        setTimeout(() => {
             document.getElementById('showtime').classList.remove('no-click')
-    }, num);
-    }, num);
-    }, num);
+    }, num*2);
     }, num);
     }, num);
     }, num);
     }, card.length*num);
-    }, num);
-    }, num);
+    }, num*2);
     }, card.length*2*num);
     }, num);
 }
@@ -379,7 +374,6 @@ function skip() {
     document.getElementById('intro').classList.add('hidden')
     document.getElementById('skip').classList.add('hidden')
     document.getElementById('skip-plus').classList.add('hidden')
-    document.getElementById('loading').classList.add('hidden')
     document.body.classList.remove('code')
 }
 
