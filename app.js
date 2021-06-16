@@ -61,6 +61,7 @@ function helloWorld(str, num) {
     // @ts-ignore
     document.getElementById('start').disabled = true
     document.getElementById('start').classList.add('disable')
+    document.getElementById('skip').classList.add('hidden')
     let message = document.getElementById('hello')
     setTimeout(() => {
         clearInterval(helloInt)
