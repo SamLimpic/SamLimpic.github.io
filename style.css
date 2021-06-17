@@ -130,13 +130,38 @@ img.rounded {
   z-index: 10;
 }
 
-.img-thumb {
+.git {
+  position: absolute;
+  top: 20px;
+  left: 20px;
   cursor: pointer;
-  z-index: 8;
+  color: var(--info);
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
 }
 
-.img-thumb:hover .thumb {
+.git-mobile {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  cursor: pointer;
+  color: var(--info);
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.thumb:hover {
   color: var(--warning);
+}
+.git:hover {
+  color: var(--warning);
+}
+.git-mobile:hover {
+  color: var(--warning);
+}
+
+.img-thumb {
+  z-index: 8;
 }
 
 .icon {
