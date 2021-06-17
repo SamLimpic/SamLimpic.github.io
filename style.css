@@ -54,7 +54,7 @@ img.rounded {
 }
 
 .transition {
-  transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in-out;
 }
 
 .hidden {
@@ -142,8 +142,8 @@ img.rounded {
 
 .git-mobile {
   position: absolute;
-  top: 20px;
-  right: 60px;
+  top: 65px;
+  right: 20px;
   cursor: pointer;
   color: var(--info);
   transition: all 0.3s ease-in-out;
