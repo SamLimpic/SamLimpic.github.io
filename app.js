@@ -350,9 +350,9 @@ function buildStyle(num) {
         setTimeout(() => {
             footerIcon.classList.add('text-warning')
             footerText.classList.add('text-shadow')
-        setTimeout(() => {
             headerIcon.classList.remove('fa-circle-notch', 'fa-spin')
             headerIcon.classList.add('fa-anchor', 'text-primary', 'text-shadow','font-xxl', 'ml-2')
+        setTimeout(() => {
             contactIcon.classList.remove('hide')
             contactIcon.classList.add('text-shadow', 'font-xxl')
             document.getElementById('showtime').classList.remove('no-click')
