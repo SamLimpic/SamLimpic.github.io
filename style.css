@@ -54,7 +54,17 @@ img.rounded {
 }
 
 .transition {
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+}
+
+.transition-plus {
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
 }
 
 .hidden {
@@ -122,8 +132,8 @@ img.rounded {
 
 .thumb {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
   cursor: pointer;
   color: var(--info);
   transition: all 0.3s ease-in-out;
@@ -132,8 +142,8 @@ img.rounded {
 
 .git {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 15px;
+  left: 15px;
   cursor: pointer;
   color: var(--info);
   transition: all 0.3s ease-in-out;
@@ -142,8 +152,8 @@ img.rounded {
 
 .git-mobile {
   position: absolute;
-  top: 65px;
-  right: 20px;
+  top: 15px;
+  right: 60px;
   cursor: pointer;
   color: var(--info);
   transition: all 0.3s ease-in-out;

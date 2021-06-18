@@ -1,3 +1,4 @@
+//#region CONST VARIABLES
 const mother = new Audio('./assets/mother2.wav')
 
 let show = false
@@ -55,6 +56,7 @@ const cards = {
         text: 'A click-counting adventure utilizing custom art assets'
     }
 }
+//#endregion
 
 function helloWorld(str, num) {
     mother.play()
@@ -142,12 +144,14 @@ function load(num) {
 }
 
 function remove() {
+    document.body.classList.add('transition-plus')
     header.classList.remove('modern', 'bg-secondary', 'hidden')
+    header.classList.add('transition-plus')
     headerName.classList.remove('font-xxl', 'text-light', 'text-shadow')
-    headerName.classList.add('font-md')
+    headerName.classList.add('font-md', 'transition')
     headerIcon.classList.remove('fa-anchor', 'font-xxl', 'text-shadow', 'text-primary', 'ml-2')
-    headerIcon.classList.add('fa-circle-notch', 'fa-spin', 'font-xl')
-    contactIcon.classList.add('hide')
+    headerIcon.classList.add('fa-circle-notch', 'fa-spin', 'font-xl', 'transition')
+    contactIcon.classList.add('hide', 'transition')
     contactIcon.classList.remove('text-shadow', 'font-xxl')
     headerName.innerText = ''
     document.getElementById('showtime').classList.add('no-click')
@@ -160,32 +164,33 @@ function remove() {
     removeCard('miner')
 
     footer.classList.remove('modern', 'bg-secondary')
+    footer.classList.add('transition-plus')
     document.getElementById('footer-text-1').innerText = ''
     document.getElementById('footer-text-2').innerText = ''
     footerText.classList.remove('font-lg', 'text-light', 'text-center', 'text-shadow')
-    footerText.classList.add('font-xs')
+    footerText.classList.add('font-xs', 'transition')
     footerIcon.classList.remove('text-warning')
 }
 
 function removeCard(str) {
     document.getElementById(str + '-card').classList.remove('shadow', 'bg-light', 'rounded')
-    document.getElementById(str + '-card').classList.add('border-success', 'square')
-    document.getElementById(str + '-body').classList.add('code-back')
+    document.getElementById(str + '-card').classList.add('border-success', 'square', 'transition-plus')
+    document.getElementById(str + '-body').classList.add('code-back', 'transition-plus')
     document.getElementById(str + '-star').classList.remove('star', 'font-xs')
-    document.getElementById(str + '-star').classList.add('font-xxs')
+    document.getElementById(str + '-star').classList.add('font-xxs', 'transition-plus')
     document.getElementById(str + '-full-stack').classList.remove('star', 'modern')
-    document.getElementById(str + '-full-stack').classList.add('font-xxxs')
+    document.getElementById(str + '-full-stack').classList.add('font-xxxs', 'transition-plus')
     document.getElementById(str + '-full-stack').innerText = ''
     document.getElementById(str + '-icon').classList.remove('icon')
     document.getElementById(str + '-title').innerText = ''
     document.getElementById(str + '-title').classList.remove('font-xxl')
-    document.getElementById(str + '-title').classList.add('font-xs', 'mt-md-3', 'mt-sm-1')
+    document.getElementById(str + '-title').classList.add('font-xs', 'mt-md-3', 'mt-sm-1', 'transition-plus')
     document.getElementById(str + '-subtitle').innerText = ''
     document.getElementById(str + '-subtitle').classList.remove('text-muted', 'font-md')
-    document.getElementById(str + '-subtitle').classList.add('font-xxxs')
+    document.getElementById(str + '-subtitle').classList.add('font-xxxs', 'transition-plus')
     document.getElementById(str + '-text').innerText = ''
     document.getElementById(str + '-text').classList.remove('font-lg', 'pl-4')
-    document.getElementById(str + '-text').classList.add('font-xxs')
+    document.getElementById(str + '-text').classList.add('font-xxs', 'transition-plus')
 }
 
 function buildHeader(num) {
@@ -340,16 +345,16 @@ function buildStyle(num) {
         setTimeout(() => {
             header.classList.add('modern')
             footer.classList.add('modern')
+            headerName.classList.add('font-xxl')
+            footerText.classList.add('font-lg')
             document.getElementById('skip-plus').classList.add('hidden')
         setTimeout(() => {
             footer.classList.add('text-center')
-            footerText.classList.add('font-lg')
         setTimeout(() => {
-            headerName.classList.add('font-xxl')
             headerName.classList.add('text-shadow')
-        setTimeout(() => {
             footerIcon.classList.add('text-warning')
             footerText.classList.add('text-shadow')
+        setTimeout(() => {
             headerIcon.classList.remove('fa-circle-notch', 'fa-spin')
             headerIcon.classList.add('fa-anchor', 'text-primary', 'text-shadow','font-xxl', 'ml-2')
         setTimeout(() => {
