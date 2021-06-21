@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-          crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -23,38 +23,43 @@
 <body class="code">
 
   <header class="container-fluid position-relative">
-    <button id="skip" type="button" class="skip btn btn-lg btn-outline-success bg-transparent border-0 font-lg px-3 py-0 pb-2"
+    <button id="skip" type="button"
+      class="skip btn btn-lg btn-outline-success bg-transparent border-0 font-lg px-3 py-0 pb-2"
       title="Ain't nobody got time for this..." onclick="lame('...Lame', 200)">
       <i class="fas fa-angle-double-right"></i>
     </button>
-    <button id="skip-plus" type="button" class="hidden skip btn btn-lg btn-outline-success bg-transparent border-0 font-md"
+    <button id="skip-plus" type="button"
+      class="hidden skip btn btn-lg btn-outline-success bg-transparent border-0 font-md"
       title="Ain't nobody got time for this..." onclick="reloadPage()">
       SKIP
     </button>
     <div id="header" class="modern hidden row bg-secondary align-items-center py-2 px-3">
-        <i id="header-icon" class="fas fa-anchor transition font-xxl text-primary text-shadow text-left ml-2"></i>
-        <h1 id="header-name" class="font-xxl text-light text-shadow text-left pl-4 mt-2">Sam Limpic</h1>
-          <i id="contact-icon" class="contact fas fa-address-card text-primary text-shadow font-xxl ml-auto px-2" onclick="contacts()"></i>
-          <i id="app-icon" class="d-none contact no-click far fa-address-card text-primary text-shadow font-xxl ml-auto px-2"></i>
+      <i id="header-icon" class="fas fa-anchor transition font-xxl text-primary text-shadow text-left ml-2"></i>
+      <h1 id="header-name" class="font-xxl text-light text-shadow text-left pl-4 mt-2">Sam Limpic</h1>
+      <i id="contact-icon" class="contact fas fa-address-card text-primary text-shadow font-xxl ml-auto px-2"
+        onclick="contacts()"></i>
+      <i id="app-icon"
+        class="d-none contact no-click far fa-address-card text-primary text-shadow font-xxl ml-auto px-2"></i>
     </div>
   </header>
 
   <main class="container-fluid">
     <section id="intro" class="mt-md-5 mt-2 px-md-5">
       <div class="row justify-content-start align-items-center">
-          <div class="col">
-            <div class="row justify-content-start text-center align-items-center">
-              <h1 class="font-xxl">[</h1>
-              <h1 id="hello" class="font-xl">_</h1>
-              <h1 class="font-xxl">]</h1>
-            </div>
-            <h2 class="font-xl ml-4"><b>Sam Limpic</b></h2>
-            <h3 class="font-md ml-4 py-2">Full Stack Developer</h3>
-            <h4 class="font-sm ml-4">Creative Development <br>
-              & Intuitive Design</h4>
-            <button id="start" type="button" class="btn-outline-success ml-md-5 ml-3 mt-md-3 mt-2 pl-2 font-lg" onclick=" helloWorld('Hello_World', 250)">START</button>
+        <div class="col">
+          <div class="row justify-content-start text-center align-items-center">
+            <h1 class="font-xxl">[</h1>
+            <h1 id="hello" class="font-xl">_</h1>
+            <h1 class="font-xxl">]</h1>
           </div>
+          <h2 class="font-xl ml-4"><b>Sam Limpic</b></h2>
+          <h3 class="font-md ml-4 py-2">Full Stack Developer</h3>
+          <h4 class="font-sm ml-4">Creative Development <br>
+            & Intuitive Design</h4>
+          <button id="start" type="button" class="btn-outline-success ml-md-5 ml-3 mt-md-3 mt-2 pl-2 font-lg"
+            onclick=" helloWorld('Hello_World', 250)">START</button>
         </div>
+      </div>
       </div>
     </section>
 
@@ -64,11 +69,13 @@
         <div id="keepr" class="hidden col-lg-4 col-md-6 col-12 p-3">
           <div id="keepr-card" class="card transition rounded shadow bg-light" onclick="expand('keepr')">
             <div id="keepr-body" class="card-body position-relative">
-              <i id="keepr-star" class="hidden fas fa-star star font-xs"><span id="keepr-full-stack" class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
+              <i id="keepr-star" class="hidden fas fa-star star font-xs"><span id="keepr-full-stack"
+                  class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
               <i id="keepr-icon" class="hidden fab fa-facebook-f icon"></i>
               <h2 id="keepr-title" class="card-title font-xxl mt-sm-1"><u>Fellowship</u></h2>
               <h3 id="keepr-subtitle" class="card-subtitle text-muted font-md"><i>Vue3 - SCSS - C# - SQL</i></h3>
-              <h4 id="keepr-text" class="card-text font-lg pl-4">A social media site populated with characters from The Lord of the Rings
+              <h4 id="keepr-text" class="card-text font-lg pl-4">A social media site populated with characters from The
+                Lord of the Rings
               </h4>
             </div>
           </div>
@@ -77,11 +84,14 @@
         <div id="tavern" class="hidden col-lg-4 col-md-6 col-12 p-3">
           <div id="tavern-card" class="card transition rounded shadow bg-light" onclick="expand('tavern')">
             <div id="tavern-body" class="card-body position-relative">
-              <i id="tavern-star" class="hidden fas fa-star star font-xs"><span id="tavern-full-stack" class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
+              <i id="tavern-star" class="hidden fas fa-star star font-xs"><span id="tavern-full-stack"
+                  class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
               <i id="tavern-icon" class="hidden fas fa-dice-d20 icon"></i>
               <h2 id="tavern-title" class="card-title font-xxl mt-sm-1"><u>The Tavern</u></h2>
-              <h3 id="tavern-subtitle" class="card-subtitle text-muted font-md"><i>Vue3 - SCSS - Node.js - MongoDB</i></h3>
-              <h4 id="tavern-text" class="card-text font-lg pl-4">An interactive character-builder for Dungeons & Dragons 5th Edition</h4>
+              <h3 id="tavern-subtitle" class="card-subtitle text-muted font-md"><i>Vue3 - SCSS - Node.js - MongoDB</i>
+              </h3>
+              <h4 id="tavern-text" class="card-text font-lg pl-4">An interactive character-builder for Dungeons &
+                Dragons 5th Edition</h4>
             </div>
           </div>
         </div>
@@ -89,11 +99,13 @@
         <div id="bug" class="hidden col-lg-4 col-md-6 col-12 p-3">
           <div id="bug-card" class="card transition rounded shadow bg-light" onclick="expand('bug')">
             <div id="bug-body" class="card-body position-relative">
-              <i id="bug-star" class="hidden fas fa-star star font-xs"><span id="bug-full-stack" class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
+              <i id="bug-star" class="hidden fas fa-star star font-xs"><span id="bug-full-stack"
+                  class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
               <i id="bug-icon" class="hidden fas fa-bug icon"></i>
               <h2 id="bug-title" class="card-title font-xxl mt-sm-1"><u>Bug Catcher</u></h2>
               <h3 id="bug-subtitle" class="card-subtitle text-muted font-md"><i>Vue3 - SCSS - Node.js - MongoDB</i></h3>
-              <h4 id="bug-text" class="card-text font-lg pl-4">A mock message board to post, comment on, and release bugs
+              <h4 id="bug-text" class="card-text font-lg pl-4">A mock message board to post, comment on, and release
+                bugs
               </h4>
             </div>
           </div>
@@ -102,11 +114,14 @@
         <div id="bill" class="hidden col-lg-4 col-md-6 col-12 p-3">
           <div id="bill-card" class="card transition rounded shadow bg-light" onclick="expand('bill')">
             <div id="bill-body" class="card-body position-relative">
-              <i id="bill-star" class="hidden fas fa-star star font-xs"><span id="bill-full-stack" class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
+              <i id="bill-star" class="hidden fas fa-star star font-xs"><span id="bill-full-stack"
+                  class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
               <i id="bill-icon" class="hidden fas fa-sign icon"></i>
               <h2 id="bill-title" class="card-title font-xxl mt-sm-1"><u>Bill Boards</u></h2>
-              <h3 id="bill-subtitle" class="card-subtitle text-muted font-md"><i>Vue3 - SCSS - Node.js - MongoDB</i></h3>
-              <h4 id="bill-text" class="card-text font-lg pl-4">A task manager inspired by Trello, utilizing Fill Murray to its upmost
+              <h3 id="bill-subtitle" class="card-subtitle text-muted font-md"><i>Vue3 - SCSS - Node.js - MongoDB</i>
+              </h3>
+              <h4 id="bill-text" class="card-text font-lg pl-4">A task manager inspired by Trello, utilizing Fill Murray
+                to its upmost
               </h4>
             </div>
           </div>
@@ -115,11 +130,13 @@
         <div id="smith" class="hidden col-lg-4 col-md-6 col-12 p-3">
           <div id="smith-card" class="card transition rounded shadow bg-light" onclick="expand('smith')">
             <div id="smith-body" class="card-body position-relative">
-              <i id="smith-star" class="d-none fas fa-star star font-xs"><span id="smith-full-stack" class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
+              <i id="smith-star" class="d-none fas fa-star star font-xs"><span id="smith-full-stack"
+                  class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
               <i id="smith-icon" class="hidden fas fa-fire-alt icon"></i>
               <h2 id="smith-title" class="card-title font-xxl mt-sm-1"><u>Master Smith</u></h2>
               <h3 id="smith-subtitle" class="card-subtitle text-muted font-md"><i>Javascript - CSS</i></h3>
-              <h4 id="smith-text" class="card-text font-lg pl-4">A task-list blacksmith simulator utilizing custom art assets
+              <h4 id="smith-text" class="card-text font-lg pl-4">A task-list blacksmith simulator utilizing custom art
+                assets
               </h4>
             </div>
           </div>
@@ -128,7 +145,8 @@
         <div id="miner" class="hidden col-lg-4 col-md-6 col-12 p-3">
           <div id="miner-card" class="card transition rounded shadow bg-light" onclick="expand('miner')">
             <div id="miner-body" class="card-body position-relative">
-              <i id="miner-star" class="d-none fas fa-star star font-xs"><span id="miner-full-stack" class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
+              <i id="miner-star" class="d-none fas fa-star star font-xs"><span id="miner-full-stack"
+                  class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
               <i id="miner-icon" class="hidden fas fa-dungeon icon"></i>
               <h2 id="miner-title" class="card-title font-xxl mt-sm-1"><u>Dungeoneer</u></h2>
               <h3 id="miner-subtitle" class="card-subtitle text-muted font-md"><i>Javascript - CSS</i></h3>
@@ -143,14 +161,16 @@
     <section id="apps" class="modern transition hide">
       <div id="apps-row" class="d-none row justify-content-center m-md-5 my-4 py-md-0 py-2 m-3">
         <div id="keepr-app" class="d-none col-lg-8 col-md-10 col-12">
-          <div class="row justify-content-between rounded shadow bg-light box-shadow p-md-3 p-2" onclick="expand('keepr')">
+          <div class="row justify-content-between rounded shadow bg-light box-shadow p-md-3 p-2"
+            onclick="expand('keepr')">
             <div class="col-sm-6 col-12 position-relative pt-md-4 pl-md-4 pt-3 pl-3 pb-sm-3 pb-2">
               <i class="fas fa-star star font-sm"><span class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
-              <i class="fas fa-code git-mobile font-xl d-sm-none d-block" 
-              onclick="window.open('https://github.com/SamLimpic/cs-keepr')"></i>
+              <i class="fas fa-code git-mobile font-xl d-sm-none d-block"
+                onclick="window.open('https://github.com/SamLimpic/cs-keepr')"></i>
               <i class="fas fa-external-link-alt thumb font-xl d-sm-none d-block"
-              onclick="window.open('https://samwise-fellowship.herokuapp.com/#/')"></i>
-              <h2 class="font-xxl mt-3"><i id="keepr-app-icon" class="fab fa-facebook-f app-icon mr-3"></i><u>Fellowship</u></h2>
+                onclick="window.open('https://samwise-fellowship.herokuapp.com/#/')"></i>
+              <h2 class="font-xxl mt-3"><i id="keepr-app-icon"
+                  class="fab fa-facebook-f app-icon mr-3"></i><u>Fellowship</u></h2>
               <h3 class="font-md ml-3">Client: <span class="font-md text-muted"><i>Vue3 - SCSS</i></span></h3>
               <h3 class="font-md ml-3">Server: <span class="font-md text-muted"><i>C# - MySQL</i></span></h3>
               <h3 class="font-md ml-3">Completed In: <span class="font-md text-muted"><i>40 Hours</i></span></h3>
@@ -159,7 +179,8 @@
             </div>
             <div class="col-sm-6 d-sm-flex d-none mb-auto p-md-4 p-sm-3 p-2">
               <div class="position-relative img-thumb">
-                <i class="fas fa-code git text-shadow font-xl" onclick="window.open('https://github.com/SamLimpic/cs-keepr')"></i>
+                <i class="fas fa-code git text-shadow font-xl"
+                  onclick="window.open('https://github.com/SamLimpic/cs-keepr')"></i>
                 <i class="fas fa-external-link-alt text-shadow thumb font-xl"
                   onclick="window.open('https://samwise-fellowship.herokuapp.com/#/')"></i>
                 <img class="w-100 rounded" src="./assets/Fellowship.png" alt="">
@@ -167,11 +188,12 @@
             </div>
             <ul class="font-md mx-md-3 mr-4">
               <li>
-                A site inspired by Pinterest, populated with "users" from The Lord of the Rings, with authentication through Auth0.
+                A site inspired by Pinterest, populated with "users" from The Lord of the Rings, with authentication
+                through Auth0.
               </li>
               <li>
                 Allows multiple user profiles, user-submitted "Keeps", and user "Vaults".
-              </li> 
+              </li>
               <li>
                 Users can post Keeps, and save any user's Keeps to a personal Vault.
               </li>
@@ -188,14 +210,16 @@
           </div>
         </div>
         <div id="tavern-app" class="d-none col-lg-8 col-md-10 col-12">
-          <div class="row justify-content-between rounded shadow bg-light box-shadow p-md-3 p-2" onclick="expand('tavern')">
+          <div class="row justify-content-between rounded shadow bg-light box-shadow p-md-3 p-2"
+            onclick="expand('tavern')">
             <div class="col-sm-6 col-12 position-relative pt-md-4 pl-md-4 pt-3 pl-3 pb-sm-3 pb-2">
               <i class="fas fa-star star font-sm"><span class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
-              <i class="fas fa-code git-mobile font-xl d-sm-none d-block" 
-              onclick="window.open('https://github.com/SamLimpic/the-tavern')"></i>
+              <i class="fas fa-code git-mobile font-xl d-sm-none d-block"
+                onclick="window.open('https://github.com/SamLimpic/the-tavern')"></i>
               <i class="fas fa-external-link-alt thumb font-xl d-sm-none d-block"
-              onclick="window.open('https://samwise-the-tavern.herokuapp.com/#/')"></i>
-              <h2 class="font-xxl mt-3"><i id="tavern-app-icon" class="fas fa-dice-d20 app-icon mr-3"></i><u>The Tavern</u></h2>
+                onclick="window.open('https://samwise-the-tavern.herokuapp.com/#/')"></i>
+              <h2 class="font-xxl mt-3"><i id="tavern-app-icon" class="fas fa-dice-d20 app-icon mr-3"></i><u>The
+                  Tavern</u></h2>
               <h3 class="font-md ml-3">Client: <span class="font-md text-muted"><i>Vue3 - SCSS</i></span></h3>
               <h3 class="font-md ml-3">Server: <span class="font-md text-muted"><i>Node - MongoDB</i></span></h3>
               <h3 class="font-md ml-3">Completed In: <span class="font-md text-muted"><i>80 Hours</i></span></h3>
@@ -204,7 +228,8 @@
             </div>
             <div class="col-sm-6 d-sm-flex d-none mb-auto p-md-4 p-sm-3 p-2">
               <div class="position-relative img-thumb">
-                <i class="fas fa-code git text-shadow font-xl" onclick="window.open('https://github.com/SamLimpic/the-tavern')"></i>
+                <i class="fas fa-code git text-shadow font-xl"
+                  onclick="window.open('https://github.com/SamLimpic/the-tavern')"></i>
                 <i class="fas fa-external-link-alt text-shadow thumb font-xl"
                   onclick="window.open('https://samwise-the-tavern.herokuapp.com/#/')"></i>
                 <img class="w-100 rounded" src="./assets/The Tavern.png" alt="">
@@ -224,22 +249,25 @@
                 Users complete a personality profile to determine their ideal character.
               </li>
               <li>
-                Pulls data from a custom-built MongoDB Database to build characters according to the official D&D ruleset.
+                Pulls data from a custom-built MongoDB Database to build characters according to the official D&D
+                ruleset.
               </li>
               <li>
-                Produces a fully-playable starting character that can be referenced from a user's character profile page.
+                Produces a fully-playable starting character that can be referenced from a user's character profile
+                page.
               </li>
             </ul>
           </div>
         </div>
         <div id="bug-app" class="d-none col-lg-8 col-md-10 col-12">
-          <div class="row justify-content-between rounded shadow bg-light box-shadow p-md-3 p-2" onclick="expand('bug')">
+          <div class="row justify-content-between rounded shadow bg-light box-shadow p-md-3 p-2"
+            onclick="expand('bug')">
             <div class="col-sm-6 col-12 position-relative pt-md-4 pl-md-4 pt-3 pl-3 pb-sm-3 pb-2">
               <i class="fas fa-star star font-sm"><span class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
-              <i class="fas fa-code git-mobile font-xl d-sm-none d-block" 
-              onclick="window.open('https://github.com/SamLimpic/bug-catcher')"></i>
+              <i class="fas fa-code git-mobile font-xl d-sm-none d-block"
+                onclick="window.open('https://github.com/SamLimpic/bug-catcher')"></i>
               <i class="fas fa-external-link-alt thumb font-xl d-sm-none d-block"
-              onclick="window.open('https://bug-catcher-vue.herokuapp.com/#/')"></i>
+                onclick="window.open('https://bug-catcher-vue.herokuapp.com/#/')"></i>
               <h2 class="font-xl mt-3"><i id="bug-app-icon" class="fas fa-bug app-icon mr-3"></i><u>Bug Catcher</u></h2>
               <h3 class="font-md ml-3">Client: <span class="font-md text-muted"><i>Vue3 - SCSS</i></span></h3>
               <h3 class="font-md ml-3">Server: <span class="font-md text-muted"><i>Node - MongoDB</i></span></h3>
@@ -261,7 +289,8 @@
                 A tech site inspired by StackOverflow, with authentication through Auth0.
               </li>
               <li>
-                Designed as a portal for user-submitted software "Bugs", allowing users to comment until Bugs are closed.
+                Designed as a portal for user-submitted software "Bugs", allowing users to comment until Bugs are
+                closed.
               </li>
               <li>
                 Modified to instead allow users to "Catch" and "Release" Bug Pokemon.
@@ -270,20 +299,23 @@
                 Data is pulled from the Pokemon API and displayed on a Bug's info page.
               </li>
               <li>
-                Users may "Release" bugs, but their data remains in a MongoDB database to be viewed publicly by all users.
+                Users may "Release" bugs, but their data remains in a MongoDB database to be viewed publicly by all
+                users.
               </li>
             </ul>
           </div>
         </div>
         <div id="bill-app" class="d-none col-lg-8 col-md-10 col-12">
-          <div class="row justify-content-between rounded shadow bg-light box-shadow p-md-3 p-2" onclick="expand('bill')">
+          <div class="row justify-content-between rounded shadow bg-light box-shadow p-md-3 p-2"
+            onclick="expand('bill')">
             <div class="col-sm-6 col-12 position-relative pt-md-4 pl-md-4 pt-3 pl-3 pb-sm-3 pb-2">
               <i class="fas fa-star star font-sm"><span class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
-              <i class="fas fa-code git-mobile font-xl d-sm-none d-block" 
-              onclick="window.open('https://github.com/SamLimpic/kanban')"></i>
+              <i class="fas fa-code git-mobile font-xl d-sm-none d-block"
+                onclick="window.open('https://github.com/SamLimpic/kanban')"></i>
               <i class="fas fa-external-link-alt thumb font-xl d-sm-none d-block"
-              onclick="window.open('https://bill-boards.herokuapp.com/#/')"></i>
-              <h2 class="font-xl mt-3"><i id="bill-app-icon" class="fas fa-sign app-icon mr-3"></i><u>Bill Boards</u></h2>
+                onclick="window.open('https://bill-boards.herokuapp.com/#/')"></i>
+              <h2 class="font-xl mt-3"><i id="bill-app-icon" class="fas fa-sign app-icon mr-3"></i><u>Bill Boards</u>
+              </h2>
               <h3 class="font-md ml-3">Client: <span class="font-md text-muted"><i>Vue3 - SCSS</i></span></h3>
               <h3 class="font-md ml-3">Server: <span class="font-md text-muted"><i>Node - MongoDB</i></span></h3>
               <h3 class="font-md ml-3">Completed In: <span class="font-md text-muted"><i>40 Hours</i></span></h3>
@@ -292,7 +324,8 @@
             </div>
             <div class="col-sm-6 d-sm-flex d-none mb-auto p-md-4 p-sm-3 p-2">
               <div class="position-relative img-thumb">
-                <i class="fas fa-code git text-shadow font-xl" onclick="window.open('https://github.com/SamLimpic/kanban')"></i>
+                <i class="fas fa-code git text-shadow font-xl"
+                  onclick="window.open('https://github.com/SamLimpic/kanban')"></i>
                 <i class="fas fa-external-link-alt text-shadow thumb font-xl"
                   onclick="window.open('https://bill-boards.herokuapp.com/#/')"></i>
                 <img class="w-100 rounded" src="./assets/Bill Boards.png" alt="">
@@ -318,13 +351,15 @@
           </div>
         </div>
         <div id="smith-app" class="d-none col-lg-8 col-md-10 col-12">
-          <div class="row justify-content-between rounded shadow bg-light box-shadow p-md-3 p-2" onclick="expand('smith')">
+          <div class="row justify-content-between rounded shadow bg-light box-shadow p-md-3 p-2"
+            onclick="expand('smith')">
             <div class="col-sm-6 col-12 position-relative pt-md-4 pl-md-4 pt-3 pl-3 pb-sm-3 pb-2">
-              <i class="fas fa-code git-mobile font-xl d-sm-none d-block" 
-              onclick="window.open('https://github.com/SamLimpic/master-smith')"></i>
+              <i class="fas fa-code git-mobile font-xl d-sm-none d-block"
+                onclick="window.open('https://github.com/SamLimpic/master-smith')"></i>
               <i class="fas fa-external-link-alt thumb font-xl d-sm-none d-block"
-              onclick="window.open('https://samlimpic.github.io/master-smith/')"></i>
-              <h2 class="font-xl"><i id="smith-app-icon" class="fas fa-fire-alt app-icon mr-3"></i><u>Master Smith</u></h2>
+                onclick="window.open('https://samlimpic.github.io/master-smith/')"></i>
+              <h2 class="font-xl"><i id="smith-app-icon" class="fas fa-fire-alt app-icon mr-3"></i><u>Master Smith</u>
+              </h2>
               <h3 class="font-md ml-3">Client: <span class="font-md text-muted"><i>JS6 - CSS</i></span></h3>
               <h3 class="font-md ml-3">Completed In: <span class="font-md text-muted"><i>20 Hours</i></span></h3>
               <h3 class="font-md ml-3">Team Size: <span class="font-md text-muted"><i>Individual</i></span></h3>
@@ -356,12 +391,13 @@
           </div>
         </div>
         <div id="miner-app" class="d-none col-lg-8 col-md-10 col-12">
-          <div class="row justify-content-between rounded shadow bg-light box-shadow p-md-3 p-2" onclick="expand('miner')">
+          <div class="row justify-content-between rounded shadow bg-light box-shadow p-md-3 p-2"
+            onclick="expand('miner')">
             <div class="col-sm-6 col-12 position-relative pt-md-4 pl-md-4 pt-3 pl-3 pb-sm-3 pb-2">
-              <i class="fas fa-code git-mobile font-xl d-sm-none d-block" 
-              onclick="window.open('https://github.com/SamLimpic/dungeon-miner')"></i>
+              <i class="fas fa-code git-mobile font-xl d-sm-none d-block"
+                onclick="window.open('https://github.com/SamLimpic/dungeon-miner')"></i>
               <i class="fas fa-external-link-alt thumb font-xl d-sm-none d-block"
-              onclick="window.open('https://samlimpic.github.io/dungeon-miner/')"></i>
+                onclick="window.open('https://samlimpic.github.io/dungeon-miner/')"></i>
               <h2 class="font-lg"><i id="miner-app-icon" class="fas fa-dungeon app-icon mr-3"></i><u>Dungeoneer</u></h2>
               <h3 class="font-md ml-3">Client: <span class="font-md text-muted"><i>JS6 - CSS</i></span></h3>
               <h3 class="font-md ml-3">Completed In: <span class="font-md text-muted"><i>20 Hours</i></span></h3>
@@ -405,7 +441,7 @@
             </div>
             <div class="col-7 position-relative pl-3">
               <a href="/Sam Limpic Resume 2021.pdf" title="Download Resume" download>
-              <i class="fas fa-file-alt contact text-shadow resume"></i>
+                <i class="fas fa-file-alt contact text-shadow resume"></i>
               </a>
               <h2 class="font-xxl"><u>Contact Me</u></h2>
               <h3 class="font-lg">sam.limpic@humanoid.net</h3>
@@ -416,15 +452,18 @@
               <h5 class="font-sm"><i>Node.JS, C#, MongoDB, SQL</i></h5>
               <div class="contact pt-2">
                 <h4 class="font-md" onclick="window.open('http://github.com/SamLimpic')"><span>
-                <i class="fab fa-github-square text-primary pr-2"></i></span>
-                <i>/SamLimpic</i></h4>
+                    <i class="fab fa-github-square text-primary pr-2"></i></span>
+                  <i>/SamLimpic</i>
+                </h4>
                 <h4 class="font-md" onclick="window.open('http://linkedin.com/in/samuel-limpic')"><span>
-                <i class="fab fa-linkedin text-primary pr-2"></i></span>
-                <i>/in/samuel-limpic</i></h4>
+                    <i class="fab fa-linkedin text-primary pr-2"></i></span>
+                  <i>/in/samuel-limpic</i>
+                </h4>
               </div>
             </div>
           </div>
-          <div class="row justify-content-between rounded shadow d-md-none d-flex bg-light p-2 pb-4" onclick="contacts()">
+          <div class="row justify-content-between rounded shadow d-md-none d-flex bg-light p-2 pb-4"
+            onclick="contacts()">
             <div class="col-12 position-relative">
               <a href="/Sam Limpic Resume 2021.pdf" title="Download Resume" download>
                 <i class="fas fa-file-alt contact text-shadow resume"></i>
@@ -437,12 +476,12 @@
               <h5 class="font-md"><i>HTML5, SASS, Javascript 6, Vue3</i></h5>
               <h5 class="font-md"><i>Node.JS, C#, MongoDB, SQL</i></h5>
               <div class="contact pt-2">
-                <h4 class="font-md"><span>
-                <i class="fab fa-github-square text-primary"></i></span>
-                /SamLimpic</h4>
-                <h4 class="font-md"><span>
-                <i class="fab fa-linkedin text-primary"></i></span>
-                /in/samuel-limpic</h4>
+                <h4 class="font-md" onclick="window.open('http://github.com/SamLimpic')"><span>
+                    <i class="fab fa-github-square text-primary"></i></span>
+                  /SamLimpic</h4>
+                <h4 class="font-md" onclick="window.open('http://linkedin.com/in/samuel-limpic')"><span>
+                    <i class="fab fa-linkedin text-primary"></i></span>
+                  /in/samuel-limpic</h4>
               </div>
             </div>
             <div class="col-12 text-center pt-3">
@@ -460,7 +499,7 @@
       <div class="col">
         <h5 id="footer-text" class="font-lg text-light text-center text-shadow">
           <span id="footer-text-1">
-            Made With 
+            Made With
           </span>
           <span>
             <i id="footer-icon" class="hidden fab fa-js-square text-warning mx-1"></i>
