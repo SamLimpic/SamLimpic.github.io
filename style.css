@@ -53,19 +53,15 @@ img.rounded {
   font-style: italic;
 }
 
-/* .transition {
-  -webkit-transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -o-transition: opacity 0.25s ease-in-out;
-  -ms-transition: opacity 0.25s ease-in-out;
+.transition {
+  transition: all .5s ease-in-out;
+
 }
 
 .transition-plus {
-  -webkit-transition: opacity .5s ease-in-out;
-  -moz-transition: opacity .5s ease-in-out;
-  -o-transition: opacity .5s ease-in-out;
-  -ms-transition: opacity .5s ease-in-out;
-} */
+  transition: all 1.5s ease-in-out;
+
+}
 
 .hidden {
   display: none;
@@ -92,9 +88,6 @@ img.rounded {
 
 .box-shadow {
   box-shadow: 7.5px 7.5px 15px var(--dark);
-  -moz-box-shadow: 7.5px 7.5px 15px var(--dark);
-  -webkit-box-shadow: 7.5px 7.5px 15px var(--dark);
-  -o-box-shadow: 7.5px 7.5px 15px var(--dark);
 }
 
 .box-shadow:hover .app-icon {
@@ -185,11 +178,11 @@ img.rounded {
 }
 
 .card {
-  transition: all .5s ease-in-out;
+  transition: all .75s ease-in-out;
 }
 
 .card-body {
-  transition: all .5s ease-in-out;
+  transition: all .75s ease-in-out;
 }
 
 .card:hover {
@@ -227,8 +220,17 @@ img.rounded {
   pointer-events: none;
 }
 
+.o-1 {
+  opacity: 1;
+}
+
+.o-0 {
+  opacity: 0;
+  color: #2d6a33 !important;
+}
+
 .fade-in {
-  transition: opacity .3s ease-in;
+  transition: opacity .5s ease-in;
   opacity: 1;
 }
 
@@ -239,8 +241,8 @@ img.rounded {
 }
 
 .xxx {
-  font-size: .1rem;
-  opacity: 0;
+  font-size: .5rem;
+  color: var(--secondary) !important;
 }
 
 @media (min-width: 0) {
