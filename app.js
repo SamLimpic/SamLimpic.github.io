@@ -71,20 +71,20 @@ function helloWorld(str, num) {
         message.classList.add('text-black')
         for (let i = 0; i < str.length; i++) {
             setTimeout(function () {
-            if (message.innerText[0] == '_') {
-                message.innerText = ''
+                if (message.innerText[0] == '_') {
+                    message.innerText = ''
                 }
-            message.innerText += str[i]
-            }, num/2 * i);
-    }
-    }, num*10);
+                message.innerText += str[i]
+            }, num / 2 * i);
+        }
+    }, num * 10);
     setTimeout(() => {
         document.getElementById('intro').classList.add('code-text')
         document.getElementById('start').classList.add('hidden')
         setTimeout(() => {
-            load(num/5)
+            load(num / 5)
         }, num);
-    }, (num*str.length)+num*12);
+    }, (num * str.length) + num * 12);
 }
 
 function lame(str, num) {
@@ -99,42 +99,42 @@ function lame(str, num) {
         message.classList.add('text-black')
         for (let i = 0; i < str.length; i++) {
             setTimeout(function () {
-            if (message.innerText[0] == '_') {
-                message.innerText = ''
+                if (message.innerText[0] == '_') {
+                    message.innerText = ''
                 }
-            message.innerText += str[i]
+                message.innerText += str[i]
             }, num * i);
-    }
-    }, num*12);
+        }
+    }, num * 12);
     setTimeout(() => {
         document.getElementById('intro').classList.add('code-text')
         document.getElementById('start').classList.add('hidden')
         setTimeout(() => {
-        reloadPage()
-    }, num);
-    }, (num*str.length)+num*22);
+            reloadPage()
+        }, num);
+    }, (num * str.length) + num * 22);
 }
 
 function flash(id, num) {
     let elem = document.getElementById(id)
     elem.classList.remove('text-black')
     elem.classList.add('code-text')
-        setTimeout(function() {
-            elem.classList.remove('code-text')
-            elem.classList.add('text-black')
-        }, num * 2)
+    setTimeout(function () {
+        elem.classList.remove('code-text')
+        elem.classList.add('text-black')
+    }, num * 2)
 }
 
 function message(id, str, num) {
     let message = document.getElementById(id)
-        for (let i = 0; i < str.length; i++) {
-            setTimeout(function () {
-                message.innerText += str[i]
-            }, num * i);
-        }
+    for (let i = 0; i < str.length; i++) {
+        setTimeout(function () {
+            message.innerText += str[i]
+        }, num * i);
+    }
     setTimeout(() => {
         message.innerText = str.replaceAll('_', ' ')
-    }, (num*str.length));
+    }, (num * str.length));
 }
 
 function load(num) {
@@ -174,8 +174,8 @@ function remove() {
 
 function removeCard(str) {
     document.getElementById(str + '-card').classList.remove('shadow', 'bg-light', 'rounded')
-    document.getElementById(str + '-card').classList.add('border-success', 'square', 'transition-plus')
-    document.getElementById(str + '-body').classList.add('code-back', 'transition-plus')
+    document.getElementById(str + '-card').classList.add('border-success', 'square')
+    document.getElementById(str + '-body').classList.add('code-back')
     document.getElementById(str + '-star').classList.remove('star', 'font-xs')
     document.getElementById(str + '-star').classList.add('font-xxs', 'transition-plus')
     document.getElementById(str + '-full-stack').classList.remove('star', 'modern')
@@ -200,7 +200,7 @@ function buildHeader(num) {
     const str = 'Sam_Limpic'
     setTimeout(() => {
         buildBody(num / 3, 'keepr')
-    }, str.length*num);
+    }, str.length * num);
 }
 
 function buildBody(num, str) {
@@ -228,7 +228,7 @@ function buildBody(num, str) {
             text = cards[str].text.replaceAll(' ', '_')
             setTimeout(() => {
                 switchBuild(num, str)
-            }, num*text.length/2);
+            }, num * text.length / 2);
             for (let i = 0; i < text.length; i++) {
                 setTimeout(function () {
                     message.innerText += text[i]
@@ -242,39 +242,39 @@ function buildBody(num, str) {
                     document.getElementById(str + '-star').classList.remove('hidden')
                     document.getElementById(str + '-star').classList.add('code-text', 'star', 'font-xs')
                     document.getElementById(str + '-full-stack').classList.add('code-text', 'retro')
-                setTimeout(() => {
-                    for (let i = 0; i < text.length; i++) {
-                        setTimeout(function () {
-                            message.innerText += text[i]
-                            }, num*2 * i);
+                    setTimeout(() => {
+                        for (let i = 0; i < text.length; i++) {
+                            setTimeout(function () {
+                                message.innerText += text[i]
+                            }, num * 2 * i);
                         }
-                setTimeout(() => {
-                    document.getElementById(str + '-icon').classList.remove('hidden')
-                    document.getElementById(str + '-icon').classList.add('code-text', 'icon', 'font-lg')
-    }, num*text.length*2);
-    }, num);
-    }, num);
-    }, (num*text.length));
-    }, (num*text.length));
-    }, (num*text.length));
+                        setTimeout(() => {
+                            document.getElementById(str + '-icon').classList.remove('hidden')
+                            document.getElementById(str + '-icon').classList.add('code-text', 'icon', 'font-lg')
+                        }, num * text.length * 2);
+                    }, num);
+                }, num);
+            }, (num * text.length));
+        }, (num * text.length));
+    }, (num * text.length));
 }
 
 function switchBuild(num, str) {
-    switch(str) {
+    switch (str) {
         case 'keepr':
-        buildBody(num, 'tavern')
+            buildBody(num, 'tavern')
             break;
         case 'tavern':
-        buildBody(num, 'bug')
+            buildBody(num, 'bug')
             break;
         case 'bug':
-        buildBody(num, 'bill')
+            buildBody(num, 'bill')
             break;
         case 'bill':
-        buildBody(num, 'smith')
+            buildBody(num, 'smith')
             break;
         case 'smith':
-        buildBody(num, 'miner')
+            buildBody(num, 'miner')
             break;
         default: buildFooter(num * 5)
     }
@@ -292,89 +292,178 @@ function buildFooter(num) {
                 message('footer-text-2', 'By_Sam_Limpic', num)
                 const str = 'By_Sam_Limpic'
                 setTimeout(() => {
-                    buildStyle(num*4)
-    }, num*10);
-    }, num);
-    }, str.length * num);
+                    buildStyle(num * 4)
+                }, num * 10);
+            }, num);
+        }, str.length * num);
     }, num);
 }
 
 function buildStyle(num) {
-        setTimeout(() => {
-                for (let i = 0; i < card.length; i++) {
-                    setTimeout(function () {
-                        card[i].classList.remove('code-text', 'border-success', 'square', 'pt-2');
-                        setTimeout(function () {
-                            cardBody[i].classList.remove('code-text', 'code-back');
-                            card[i].classList.add('bg-light', 'text-dark', 'shadow', 'rounded');
-                        }, num*i);
-                    }, num*i);
-                }
+    setTimeout(() => {
+        for (let i = 0; i < card.length; i++) {
+            setTimeout(function () {
+                card[i].classList.remove('code-text', 'border-success', 'square', 'pt-2');
+                setTimeout(function () {
+                    cardBody[i].classList.remove('code-text', 'code-back');
+                    card[i].classList.add('bg-light', 'text-dark', 'shadow', 'rounded');
+                }, num * i);
+            }, num * i);
+        }
         setTimeout(() => {
             document.body.classList.remove('code')
             header.classList.add('bg-secondary')
             headerName.classList.add('text-light')
             footer.classList.add('bg-secondary')
             footerText.classList.add('text-light')
-        setTimeout(() => {
-            for (let i = 0; i < card.length; i++) {
-                setTimeout(function () {
-                    cardTitle[i].classList.add('font-xxl', 'modern', 'underline');
-                    cardTitle[i].classList.remove('mt-md-3');
+            setTimeout(() => {
+                for (let i = 0; i < card.length; i++) {
                     setTimeout(function () {
-                        cardSubtitle[i].classList.add('font-md', 'modern', 'text-muted', 'italic');
+                        cardTitle[i].classList.add('fade-in', 'fade-out');
+                        setTimeout(function () {
+                            cardTitle[i].classList.add('font-xxl', 'modern', 'underline');
+                            cardTitle[i].classList.remove('mt-md-3');
+                            setTimeout(function () {
+                                cardTitle[i].classList.remove('fade-out');
+                            }, num * 2);
+                        }, num);
+                    }, num * i);
+
+                    setTimeout(function () {
+                        cardSubtitle[i].classList.add('fade-in', 'fade-out');
+                        setTimeout(function () {
+                            cardSubtitle[i].classList.add('font-md', 'modern', 'text-muted', 'italic');
+                            setTimeout(function () {
+                                cardSubtitle[i].classList.remove('fade-out');
+                            }, num * 1.5);
+                        }, num);
+                    }, num * i);
+
+                    setTimeout(function () {
+                        cardText[i].classList.add('fade-in', 'fade-out');
                         setTimeout(function () {
                             cardText[i].classList.add('font-lg', 'modern', 'pl-4');
-                            icon[i].classList.remove('code-text', 'font-lg');
-                        }, num/2 * i);
-                    }, num/2 * i);
-                }, num/2 * i);
-            }
-            setTimeout(function () {
-                for (let i = 0; i < star.length; i++) {
-                    setTimeout(function () {
-                        star[i].classList.remove('code-text');
-                        fullStack[i].classList.add('text-muted', 'modern')
+                            setTimeout(function () {
+                                cardText[i].classList.remove('fade-out');
+                            }, num * 2);
+                        }, num);
+                        icon[i].classList.add('fade-in', 'fade-out');
                         setTimeout(function () {
-                            fullStack[i].classList.remove('code-text', 'font-xxxs', 'retro')
-                            star[i].classList.add('text-warning');
+                            icon[i].classList.remove('code-text', 'font-lg');
+                            setTimeout(function () {
+                                icon[i].classList.remove('fade-out');
+                            }, num * 2.5);
+                        }, num);
                     }, num * i);
+                    setTimeout(function () {
+                        star[i].classList.add('fade-in', 'fade-out');
+                        setTimeout(function () {
+                            star[i].classList.remove('code-text');
+                            star[i].classList.add('text-warning');
+                            setTimeout(function () {
+                                star[i].classList.remove('fade-out');
+                            }, num * 3);
+                        }, num);
+                        fullStack[i].classList.add('fade-in', 'fade-out')
+                        setTimeout(function () {
+                            fullStack[i].classList.add('text-muted', 'modern')
+                            fullStack[i].classList.remove('code-text', 'font-xxxs', 'retro')
+                            setTimeout(function () {
+                                fullStack[i].classList.remove('fade-out')
+                            }, num * 3);
+                        }, num);
                     }, num * i);
                 }
-            }, num);
-        setTimeout(() => {
-            header.classList.add('modern')
-            footer.classList.add('modern')
-            headerName.classList.add('font-xxl')
-            footerText.classList.add('font-lg')
-            document.getElementById('skip-plus').classList.add('hidden')
-        setTimeout(() => {
-            footer.classList.add('text-center')
-        setTimeout(() => {
-            headerName.classList.add('text-shadow')
-            footerIcon.classList.add('text-warning')
-            footerText.classList.add('text-shadow')
-        setTimeout(() => {
-            headerIcon.classList.remove('fa-circle-notch', 'fa-spin')
-            headerIcon.classList.add('fa-anchor', 'text-primary', 'text-shadow','font-xxl', 'ml-2')
-        setTimeout(() => {
-            contactIcon.classList.remove('hide')
-            contactIcon.classList.add('text-shadow', 'font-xxl')
-            document.getElementById('showtime').classList.remove('no-click')
-    }, num*2);
-    }, num);
-    }, num);
-    }, num);
-    }, card.length*num);
-    }, num*2);
-    }, card.length*2*num);
+
+                setTimeout(() => {
+                    headerName.classList.add('fade-in', 'fade-out')
+                    setTimeout(function () {
+                        header.classList.add('modern')
+                        setTimeout(function () {
+                            headerName.classList.remove('fade-out')
+                        }, num);
+                    }, num);
+                    footerText.classList.add('fade-in', 'fade-out')
+                    setTimeout(function () {
+                        footer.classList.add('modern')
+                        setTimeout(function () {
+                            footerText.classList.remove('fade-out')
+                        }, num);
+                    }, num);
+                    headerName.classList.add('fade-in', 'fade-out')
+                    setTimeout(function () {
+                        headerName.classList.add('font-xxl')
+                        setTimeout(function () {
+                            headerName.classList.remove('fade-out')
+                        }, num);
+                    }, num);
+                    footerText.classList.add('fade-in', 'fade-out')
+                    setTimeout(function () {
+                        footerText.classList.add('font-lg')
+                        setTimeout(function () {
+                            footerText.classList.remove('fade-out')
+                        }, num);
+                    }, num);
+                    document.getElementById('skip-plus').classList.add('hidden')
+                    setTimeout(() => {
+                        footerText.classList.add('fade-in', 'fade-out')
+                        setTimeout(function () {
+                            footer.classList.add('text-center')
+                            setTimeout(function () {
+                                footerText.classList.remove('fade-out')
+                            }, num);
+                        }, num);
+                        setTimeout(() => {
+                            headerName.classList.add('fade-in', 'fade-out')
+                            setTimeout(function () {
+                                headerName.classList.add('text-shadow')
+                                setTimeout(function () {
+                                    headerName.classList.remove('fade-out')
+                                }, num);
+                            }, num);
+                            footerIcon.classList.add('fade-in', 'fade-out')
+                            setTimeout(function () {
+                                footerIcon.classList.add('text-warning')
+                                setTimeout(function () {
+                                    footerIcon.classList.remove('fade-out')
+                                }, num);
+                            }, num);
+                            footerText.classList.add('fade-in', 'fade-out')
+                            setTimeout(function () {
+                                footerText.classList.add('text-shadow')
+                                setTimeout(function () {
+                                    footerText.classList.remove('fade-out')
+                                }, num);
+                            }, num);
+                            setTimeout(() => {
+                                headerIcon.classList.add('fade-in', 'fade-out')
+                                setTimeout(function () {
+                                    headerIcon.classList.remove('fa-circle-notch', 'fa-spin')
+                                    headerIcon.classList.add('fa-anchor', 'text-primary', 'text-shadow', 'font-xxl', 'ml-2')
+                                    setTimeout(function () {
+                                        headerIcon.classList.remove('fade-out')
+                                    }, num);
+                                }, num);
+                                contactIcon.classList.add('xxx')
+                                contactIcon.classList.remove('hide')
+                                setTimeout(() => {
+                                    contactIcon.classList.remove('xxx')
+                                    contactIcon.classList.add('text-shadow', 'font-xxl')
+                                    document.getElementById('showtime').classList.remove('no-click')
+                                }, num * 2);
+                            }, num);
+                        }, num);
+                    }, num);
+                }, card.length * num);
+            }, num * 2);
+        }, card.length * 2 * num);
     }, num);
 }
 
 function skip() {
     let hidden = document.getElementsByClassName('hidden')
-    while(hidden.length > 0){
-    hidden[0].classList.remove('hidden');
+    while (hidden.length > 0) {
+        hidden[0].classList.remove('hidden');
     }
     document.getElementById('intro').classList.add('hidden')
     document.getElementById('skip').classList.add('hidden')
@@ -383,16 +472,16 @@ function skip() {
 }
 
 window.onload = function () {
-  let reload = sessionStorage.getItem("reload");
-  if (reload) {
-    sessionStorage.removeItem("reload");
-    skip();
-  }
+    let reload = sessionStorage.getItem("reload");
+    if (reload) {
+        sessionStorage.removeItem("reload");
+        skip();
+    }
 }
 
 function reloadPage() {
-  sessionStorage.setItem("reload", "true");
-  document.location.reload();
+    sessionStorage.setItem("reload", "true");
+    document.location.reload();
 }
 
 function contacts() {
