@@ -390,6 +390,7 @@ function buildStyle(num) {
                                         contactIcon.classList.remove('xxx')
                                         contactIcon.classList.add('text-shadow', 'font-xxl')
                                         document.getElementById('showtime').classList.remove('no-click')
+                                        document.getElementById('skip-plus').classList.add('hidden')
                                     }, num);
                                 }, num / 1.25);
                             }, num / 1.25);
