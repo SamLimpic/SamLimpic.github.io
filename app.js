@@ -434,7 +434,8 @@ window.onload = function () {
 
 function reloadPage(str, num) {
     document.getElementById('skip-plus').disabled = true
-    document.getElementById('header').classList.add('fade-out')
+    header.classList.remove('transition-plus')
+    document.getElementById('header').classList.add('o-0')
     document.getElementById('skip-plus').classList.add('hidden')
     document.getElementById('affirmative').classList.remove('hidden')
     let message = document.getElementById('affirmative-msg')
