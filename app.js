@@ -1,5 +1,7 @@
 //#region CONST VARIABLES
 const mother = new Audio('./assets/mother2.wav')
+const gameover = new Audio('./assets/gameover.wav')
+const affirmative = new Audio('./assets/affirmative.wav')
 
 let show = false
 
@@ -95,7 +97,7 @@ function helloWorld(str, num) {
 }
 
 function lame(str, num) {
-    mother.play()
+    gameover.play()
     // @ts-ignore
     document.getElementById('start').disabled = true
     document.getElementById('start').classList.add('disable')
@@ -112,14 +114,12 @@ function lame(str, num) {
                 message.innerText += str[i]
             }, num * i);
         }
-    }, num * 12);
+    }, num * 10);
     setTimeout(() => {
         document.getElementById('intro').classList.add('code-text')
         document.getElementById('start').classList.add('hidden')
-        setTimeout(() => {
-            reloadPage()
-        }, num);
-    }, (num * str.length) + num * 22);
+        skip();
+    }, (num * str.length) + num * 15);
 }
 
 function flash(id, num) {
