@@ -169,6 +169,7 @@ function remove() {
     removeCard('bug')
     removeCard('bill')
     removeCard('smith')
+    // removeCard('miner')
 
     footer.classList.remove('modern', 'bg-secondary')
     footer.classList.add('transition-plus')
