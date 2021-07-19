@@ -99,6 +99,8 @@ function helloWorld(str, num) {
 function lame(str, num) {
     gameover.play()
     // @ts-ignore
+    document.getElementById('skip').disabled = true
+    // @ts-ignore
     document.getElementById('start').disabled = true
     document.getElementById('start').classList.add('disable')
     let message = document.getElementById('hello')
@@ -423,16 +425,21 @@ function skip() {
 }
 
 window.onload = function () {
-    let reload = sessionStorage.getItem("reload");
+    let reload = sessionStorage.getItem("reload")
     if (reload) {
-        sessionStorage.removeItem("reload");
-        skip();
+        sessionStorage.removeItem("reload")
+        skip()
     }
 }
 
-function reloadPage() {
-    sessionStorage.setItem("reload", "true");
-    document.location.reload();
+function reloadPage(num) {
+    // @ts-ignore
+    document.getElementById('skip-plus').disabled = true
+    affirmative.play()
+    setTimeout(() => {
+        sessionStorage.setItem("reload", "true")
+        document.location.reload()
+    }, num * 11);
 }
 
 function contacts() {
