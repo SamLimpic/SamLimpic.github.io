@@ -55,12 +55,10 @@ img.rounded {
 
 .transition {
   transition: all .5s ease-in-out;
-
 }
 
 .transition-plus {
   transition: all 1.5s ease-in-out;
-
 }
 
 .hidden {
@@ -218,6 +216,10 @@ img.rounded {
 
 .no-click {
   pointer-events: none;
+}
+
+.flip {
+  transform: scaleX(-1);
 }
 
 .o-1 {

@@ -37,6 +37,11 @@ const cards = {
         subtitle: 'Vue3 - SCSS - Node.js - MongoDB',
         text: 'An interactive character-builder for Dungeons & Dragons 5th Edition'
     },
+    dragon: {
+        title: "Dragon's Den",
+        subtitle: 'Vue3 - SCSS - Node.js - MongoDB',
+        text: 'A scheduling app for Dungeons & Dragons games at BattleMage Brewery'
+    },
     bug: {
         title: 'Bug Catcher',
         subtitle: 'Vue3 - SCSS - Node.js - MongoDB',
@@ -51,12 +56,12 @@ const cards = {
         title: 'Master Smith',
         subtitle: 'Javascript - CSS',
         text: 'A task-list blacksmith simulator utilizing custom art assets'
-    },
-    miner: {
-        title: 'Dungeoneer',
-        subtitle: 'Javascript - CSS',
-        text: 'A click-counting adventure utilizing custom art assets'
     }
+    // miner: {
+    //     title: 'Dungeoneer',
+    //     subtitle: 'Javascript - CSS',
+    //     text: 'A click-counting adventure utilizing custom art assets'
+    // }
 }
 //#endregion
 
@@ -160,10 +165,10 @@ function remove() {
     document.getElementById('showtime').classList.remove('modern')
     removeCard('keepr')
     removeCard('tavern')
+    removeCard('dragon')
     removeCard('bug')
     removeCard('bill')
     removeCard('smith')
-    removeCard('miner')
 
     footer.classList.remove('modern', 'bg-secondary')
     footer.classList.add('transition-plus')
@@ -267,6 +272,9 @@ function switchBuild(num, str) {
             buildBody(num, 'tavern')
             break;
         case 'tavern':
+            buildBody(num, 'dragon')
+            break;
+        case 'dragon':
             buildBody(num, 'bug')
             break;
         case 'bug':
@@ -275,9 +283,9 @@ function switchBuild(num, str) {
         case 'bill':
             buildBody(num, 'smith')
             break;
-        case 'smith':
-            buildBody(num, 'miner')
-            break;
+        // case 'smith':
+        //     buildBody(num, 'miner')
+        //     break;
         default: buildFooter(num * 5)
     }
 }
@@ -392,10 +400,10 @@ function buildStyle(num) {
                                         document.getElementById('showtime').classList.remove('no-click')
                                         document.getElementById('skip-plus').classList.add('hidden')
                                     }, num);
-                                }, num / 1.25);
-                            }, num / 1.25);
-                        }, num / 1.25);
-                    }, num / 1.25);
+                                }, num / 1.5);
+                            }, num / 1.5);
+                        }, num / 1.5);
+                    }, num / 1.5);
                 }, num * 8);
             }, num * 4);
         }, card.length * 1.5 * num);

@@ -104,6 +104,22 @@
           </div>
         </div>
 
+        <div id="dragon" class="hidden col-lg-4 col-md-6 col-12 p-3">
+          <div id="dragon-card" class="card transition rounded shadow bg-light" onclick="expand('dragon')">
+            <div id="dragon-body" class="card-body position-relative">
+              <i id="dragon-star" class="hidden fas fa-star star font-xs"><span id="dragon-full-stack"
+                  class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
+              <i id="dragon-icon" class="hidden fas fa-dragon icon"></i>
+              <h2 id="dragon-title" class="card-title font-xxl mt-sm-1"><u>Dragon's Den</u></h2>
+              <h3 id="dragon-subtitle" class="card-subtitle text-muted font-md"><i>Vue3 - SCSS - Node.js - MongoDB</i>
+              </h3>
+              <h4 id="dragon-text" class="card-text font-lg pl-4">A scheduling app for Dungeons & Dragons
+                games at BattleMage Brewery
+              </h4>
+            </div>
+          </div>
+        </div>
+
         <div id="bug" class="hidden col-lg-4 col-md-6 col-12 p-3">
           <div id="bug-card" class="card transition rounded shadow bg-light" onclick="expand('bug')">
             <div id="bug-body" class="card-body position-relative">
@@ -150,7 +166,7 @@
           </div>
         </div>
 
-        <div id="miner" class="hidden col-lg-4 col-md-6 col-12 p-3">
+        <!-- <div id="miner" class="hidden col-lg-4 col-md-6 col-12 p-3">
           <div id="miner-card" class="card transition rounded shadow bg-light" onclick="expand('miner')">
             <div id="miner-body" class="card-body position-relative">
               <i id="miner-star" class="d-none fas fa-star star font-xs"><span id="miner-full-stack"
@@ -163,7 +179,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
 
     <section id="apps" class="modern transition hide">
@@ -263,6 +279,52 @@
               <li>
                 Produces a fully-playable starting character that can be referenced from a user's character profile
                 page.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="dragon-app" class="d-none col-lg-8 col-md-10 col-12">
+          <div class="row justify-content-between rounded shadow bg-light box-shadow p-md-3 p-2"
+            onclick="expand('dragon')">
+            <div class="col-sm-6 col-12 position-relative pt-md-4 pl-md-4 pt-3 pl-3 pb-sm-3 pb-2">
+              <i class="fas fa-star star font-sm"><span class="full-stack modern text-muted ml-2">Full-Stack</span> </i>
+              <i class="fas fa-code git-mobile font-xl d-sm-none d-block"
+                onclick="window.open('https://github.com/SamLimpic/dragons-den')"></i>
+              <i class="fas fa-external-link-alt thumb font-xl d-sm-none d-block"
+                onclick="window.open('https://battlemage-dragons-den.herokuapp.com/#/')"></i>
+              <h2 class="font-xl mt-3"><i id="dragon-app-icon" class="fas fa-dragon app-icon mr-3"></i><u>Dragon's
+                  Den</u>
+              </h2>
+              <h3 class="font-md ml-3">Client: <span class="font-md text-muted"><i>Vue3 - SCSS</i></span></h3>
+              <h3 class="font-md ml-3">Server: <span class="font-md text-muted"><i>Node - MongoDB</i></span></h3>
+              <h3 class="font-md ml-3">Completed In: <span class="font-md text-muted"><i>30 Hours</i></span></h3>
+              <h3 class="font-md ml-3">Team Size: <span class="font-md text-muted"><i>Individual</i></span></h3>
+              <h3 class="font-md ml-3">Team Role: <span class="font-md text-muted"><i>Full-Stack</i></span></h3>
+            </div>
+            <div class="col-sm-6 d-sm-flex d-none mb-auto p-md-4 p-sm-3 p-2">
+              <div class="position-relative img-thumb">
+                <i class="fas fa-code git text-shadow font-xl"
+                  onclick="window.open('https://github.com/SamLimpic/dragons-den')"></i>
+                <i class="fas fa-external-link-alt text-shadow thumb font-xl"
+                  onclick="window.open('https://battlemage-dragons-den.herokuapp.com/#/')"></i>
+                <img class="w-100 rounded" src="./assets/Dragons Den.png" alt="">
+              </div>
+            </div>
+            <ul class="font-md mx-md-3 mr-4">
+              <li>
+                A schedluling app for Dungeons & Dragon's games created for BattleMage Brewery.
+              </li>
+              <li>
+                Designed to facilitate easy hosting and scheduling of local Dungeons & Dragons games.
+              </li>
+              <li>
+                Supports Admin and DM roles for game creation, and Player roles for signups.
+              </li>
+              <li>
+                Utilizes NodeCron for automated updates of weekly games and player rosters.
+              </li>
+              <li>
+                Dungeon Masters may create new games weekly and manage experience gains.
               </li>
             </ul>
           </div>
@@ -398,7 +460,7 @@
             </ul>
           </div>
         </div>
-        <div id="miner-app" class="d-none col-lg-8 col-md-10 col-12">
+        <!-- <div id="miner-app" class="d-none col-lg-8 col-md-10 col-12">
           <div class="row justify-content-between rounded shadow bg-light box-shadow p-md-3 p-2"
             onclick="expand('miner')">
             <div class="col-sm-6 col-12 position-relative pt-md-4 pl-md-4 pt-3 pl-3 pb-sm-3 pb-2">
@@ -436,7 +498,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
 
