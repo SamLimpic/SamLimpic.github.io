@@ -1,3 +1,4 @@
+// @ts-nocheck
 //#region CONST VARIABLES
 const mother = new Audio('./assets/mother2.wav')
 const gameover = new Audio('./assets/gameover.wav')
@@ -69,7 +70,6 @@ const cards = {
 
 function helloWorld(str, num) {
     mother.play()
-    // @ts-ignore
     document.getElementById('start').disabled = true
     document.getElementById('start').classList.add('disable')
     document.getElementById('skip').classList.add('hidden')
@@ -96,11 +96,9 @@ function helloWorld(str, num) {
     }, (num * str.length) + num * 12);
 }
 
-function lame(str, num) {
+function gameOver(str, num) {
     gameover.play()
-    // @ts-ignore
     document.getElementById('skip').disabled = true
-    // @ts-ignore
     document.getElementById('start').disabled = true
     document.getElementById('start').classList.add('disable')
     let message = document.getElementById('hello')
@@ -116,7 +114,7 @@ function lame(str, num) {
                 message.innerText += str[i]
             }, num * i);
         }
-    }, num * 10);
+    }, num * 11);
     setTimeout(() => {
         document.getElementById('intro').classList.add('code-text')
         document.getElementById('start').classList.add('hidden')
@@ -329,7 +327,8 @@ function buildStyle(num) {
             footerText.classList.add('text-light')
             setTimeout(() => {
                 headerIcon.classList.add('o-1', 'o-0')
-                document.getElementById('skip-plus').classList.add('fade-out')
+                document.getElementById('skip-plus').classList.add('hidden')
+                document.getElementById('skip-plus').disabled = true
             }, num);
             setTimeout(() => {
                 for (let i = 0; i < card.length; i++) {
@@ -421,6 +420,7 @@ function skip() {
     document.getElementById('intro').classList.add('hidden')
     document.getElementById('skip').classList.add('hidden')
     document.getElementById('skip-plus').classList.add('hidden')
+    document.getElementById('affirmative').classList.add('hidden')
     document.body.classList.remove('code')
 }
 
@@ -432,14 +432,22 @@ window.onload = function () {
     }
 }
 
-function reloadPage(num) {
-    // @ts-ignore
+function reloadPage(str, num) {
     document.getElementById('skip-plus').disabled = true
+    document.getElementById('header').classList.add('fade-out')
+    document.getElementById('skip-plus').classList.add('hidden')
+    document.getElementById('affirmative').classList.remove('hidden')
+    let message = document.getElementById('affirmative-msg')
+    for (let i = 0; i < str.length; i++) {
+        setTimeout(() => {
+            message.innerText += str[i]
+        }, num * i);
+    }
     affirmative.play()
     setTimeout(() => {
         sessionStorage.setItem("reload", "true")
         document.location.reload()
-    }, num * 11);
+    }, num * 15);
 }
 
 function contacts() {

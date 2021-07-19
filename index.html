@@ -31,14 +31,20 @@
 <body class="code">
 
   <header class="container-fluid position-relative">
+    <div id="affirmative" class="affirmative hidden row justify-content-center text-center align-items-center">
+      <h1 class="font-xxl">[</h1>
+      <h1 id="affirmative-msg" class="font-xl"></h1>
+      <h1 class="font-xxl">]</h1>
+    </div>
+
     <button id="skip" type="button"
       class="skip btn btn-lg btn-outline-success bg-transparent border-0 font-lg px-3 py-0 pb-2"
-      title="Ain't nobody got time for this..." onclick="lame('GAME_OVER', 125)">
+      title="Ain't nobody got time for this..." onclick="gameOver('GAME_OVER', 125)">
       <i class="fas fa-angle-double-right"></i>
     </button>
     <button id="skip-plus" type="button"
       class="hidden skip btn btn-lg btn-outline-success bg-transparent border-0 font-md"
-      title="Ain't nobody got time for this..." onclick="reloadPage(150)">
+      title="Ain't nobody got time for this..." onclick="reloadPage('AFFIRMATIVE', 100)">
       SKIP
     </button>
     <div id="header" class="modern hidden row bg-secondary align-items-center py-2 px-3">
