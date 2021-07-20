@@ -420,7 +420,6 @@ function skip() {
     document.getElementById('intro').classList.add('hidden')
     document.getElementById('skip').classList.add('hidden')
     document.getElementById('skip-plus').classList.add('hidden')
-    document.getElementById('affirmative').classList.add('hidden')
     document.body.classList.remove('code')
 }
 
@@ -432,13 +431,11 @@ window.onload = function () {
     }
 }
 
-function reloadPage(str, num) {
+function abort(str, num) {
     document.getElementById('skip-plus').disabled = true
-    header.classList.remove('transition-plus')
-    document.getElementById('header').classList.add('o-0')
     document.getElementById('skip-plus').classList.add('hidden')
-    document.getElementById('affirmative').classList.remove('hidden')
-    let message = document.getElementById('affirmative-msg')
+    document.getElementById('header-name').innerText = ''
+    let message = document.getElementById('header-name')
     for (let i = 0; i < str.length; i++) {
         setTimeout(() => {
             message.innerText += str[i]
