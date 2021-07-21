@@ -114,7 +114,7 @@ function gameOver(str, num) {
                 message.innerText += str[i]
             }, num * i);
         }
-    }, num * 11);
+    }, num * 10);
     setTimeout(() => {
         document.getElementById('intro').classList.add('code-text')
         document.getElementById('start').classList.add('hidden')
@@ -406,7 +406,7 @@ function buildStyle(num) {
                             }, num / 1.5);
                         }, num / 1.5);
                     }, num / 1.5);
-                }, num * 8);
+                }, num * 7);
             }, num * 4);
         }, card.length * 1.5 * num);
     }, num);
@@ -421,14 +421,6 @@ function skip() {
     document.getElementById('skip').classList.add('hidden')
     document.getElementById('skip-plus').classList.add('hidden')
     document.body.classList.remove('code')
-}
-
-window.onload = function () {
-    let reload = sessionStorage.getItem("reload")
-    if (reload) {
-        sessionStorage.removeItem("reload")
-        skip()
-    }
 }
 
 function abort(str, num) {
@@ -504,6 +496,14 @@ function expand(string) {
         contactIcon.classList.add('d-none')
         appIcon.classList.remove('d-none')
         show = true
+    }
+}
+
+window.onload = function () {
+    let reload = sessionStorage.getItem("reload")
+    if (reload) {
+        sessionStorage.removeItem("reload")
+        skip()
     }
 }
 
